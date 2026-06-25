@@ -1,0 +1,15 @@
+:root {
+  --color-bg-ruin: #1a1a14;
+  --color-bg-overgrown: #2b2d1e;
+  --color-text-bleached: #d4c9a8;
+  --color-text-dust: #b5a07a;
+  --color-text-dust-light: #c4b898;
+  --color-accent-bio: #5a8c7a;
+  --color-accent-vine: #4a6741;
+  --color-danger-rust: #a85c3a;
+
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --navbar-height: 60px;
+}
