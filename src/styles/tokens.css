@@ -10,6 +10,13 @@
   --color-accent-bio-glow: rgba(90, 140, 122, 0.5);
   --color-bg-ruin-overlay: rgba(26, 26, 20, 0.98);
   --color-bg-ruin-nav: rgba(26, 26, 20, 0.95);
+  --color-hero-overlay: rgba(26, 26, 20, 0.65);
+  --color-accent-bio-shadow: rgba(90, 140, 122, 0.2);
+  --color-accent-bio-shadow-hover: rgba(90, 140, 122, 0.4);
+  --color-accent-bio-bg-hover: rgba(90, 140, 122, 0.1);
+  --color-bleached-border: rgba(212, 201, 168, 0.3);
+  --color-bleached-border-hover: rgba(212, 201, 168, 0.6);
+  --color-bleached-muted: rgba(212, 201, 168, 0.35);
 
   --font-heading: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;

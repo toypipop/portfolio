@@ -17,7 +17,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(26, 26, 20, 0.65);
+  background: var(--color-hero-overlay);
   z-index: 0;
 }
 
@@ -100,18 +100,18 @@
   font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  box-shadow: 0 0 16px rgba(90, 140, 122, 0.2);
+  box-shadow: 0 0 16px var(--color-accent-bio-shadow);
   transition: box-shadow 200ms ease, background 200ms ease;
 }
 
 .btnPrimary:hover {
-  background: rgba(90, 140, 122, 0.1);
-  box-shadow: 0 0 28px rgba(90, 140, 122, 0.4);
+  background: var(--color-accent-bio-bg-hover);
+  box-shadow: 0 0 28px var(--color-accent-bio-shadow-hover);
 }
 
 .btnSecondary {
   background: transparent;
-  border: 1px solid rgba(212, 201, 168, 0.3);
+  border: 1px solid var(--color-bleached-border);
   color: var(--color-text-bleached);
   padding: 12px 32px;
   font-family: var(--font-mono);
@@ -122,7 +122,7 @@
 }
 
 .btnSecondary:hover {
-  border-color: rgba(212, 201, 168, 0.6);
+  border-color: var(--color-bleached-border-hover);
 }
 
 .scrollHint {
@@ -132,7 +132,7 @@
   transform: translateX(-50%);
   font-family: var(--font-mono);
   font-size: 10px;
-  color: rgba(212, 201, 168, 0.35);
+  color: var(--color-bleached-muted);
   letter-spacing: 4px;
   text-transform: uppercase;
   animation: bounce 2s ease-in-out infinite;
