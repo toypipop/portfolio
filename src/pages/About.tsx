@@ -55,11 +55,6 @@ export default function About(): React.JSX.Element {
                 full-stack web applications using Django and the MVT architecture. Implementing
                 business workflows for loan, hire purchase, and asset management systems.
               </p>
-              <div className={styles.coords}>
-                Location: <span>Chiang Mai 50120</span>
-                &nbsp;&nbsp;·&nbsp;&nbsp;
-                <span>18.7953° N, 98.9932° E</span>
-              </div>
             </div>
           </div>
         </div>
