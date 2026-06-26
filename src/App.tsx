@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
@@ -9,11 +8,6 @@ import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import './styles/globals.css'
 
-function ScrollToTop(): null {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
-  return null
-}
 
 function NotFound(): React.JSX.Element {
   return (
@@ -44,7 +38,6 @@ function AnimatedRoutes(): React.JSX.Element {
 export default function App(): React.JSX.Element {
   return (
     <BrowserRouter>
-      <ScrollToTop />
       <Navbar />
       <main>
         <AnimatedRoutes />
