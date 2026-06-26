@@ -8,6 +8,7 @@
   padding: 60px 320px;
   overflow: hidden;
   background-color: var(--color-bg-overgrown);
+  background-image: url('/src/assets/test.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -39,6 +40,13 @@
 .eyebrow::before { content: '[ '; opacity: 0.6; }
 .eyebrow::after  { content: ' ]'; opacity: 0.6; }
 
+.nameWrapper {
+  position: relative;
+  display: inline-block;
+  padding: 24px 40px;
+  margin: -24px -40px 8px;
+}
+
 .name {
   font-family: var(--font-heading);
   font-size: clamp(40px, 7vw, 80px);
@@ -46,7 +54,8 @@
   color: var(--color-text-bleached);
   line-height: 1;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
 }
 
 .role {
