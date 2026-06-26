@@ -17,6 +17,9 @@
   --color-bleached-border: rgba(212, 201, 168, 0.3);
   --color-bleached-border-hover: rgba(212, 201, 168, 0.6);
   --color-bleached-muted: rgba(212, 201, 168, 0.35);
+  --color-accent-vine-glow: rgba(74, 103, 65, 0.2);
+  --color-accent-vine-border: rgba(74, 103, 65, 0.3);
+  --color-bg-overgrown-card: rgba(43, 45, 30, 0.4);
 
   --font-heading: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;

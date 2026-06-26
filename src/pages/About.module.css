@@ -1,0 +1,137 @@
+.about {
+  min-height: calc(100vh - var(--navbar-height));
+  background: var(--color-bg-ruin);
+  padding: 80px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-accent-bio);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.sectionLabel::before { content: '// '; opacity: 0.5; }
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900;
+  color: var(--color-text-bleached);
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.photoWrapper {
+  position: relative;
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border: 1px solid var(--color-accent-vine);
+  box-shadow: 0 0 40px var(--color-accent-vine-glow);
+  display: block;
+}
+
+.photoPlaceholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--color-bg-overgrown);
+  border: 1px solid var(--color-accent-vine);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-dust);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  box-shadow: 0 0 40px var(--color-accent-vine-glow);
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logCard {
+  border: 1px solid var(--color-accent-vine-border);
+  background: var(--color-bg-overgrown-card);
+  padding: 28px 32px;
+}
+
+.logLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-accent-vine);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.bioName {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-bleached);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.bioRole {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-accent-bio);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.bioText {
+  font-size: 13px;
+  color: var(--color-text-dust-light);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.coords {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-dust);
+  letter-spacing: 2px;
+  border-top: 1px solid var(--color-accent-vine-glow);
+  padding-top: 16px;
+}
+
+.coords span { color: var(--color-accent-bio); }
+
+@media (max-width: 768px) {
+  .about {
+    padding: 48px 24px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .photoPlaceholder {
+    aspect-ratio: 1/1;
+  }
+}
