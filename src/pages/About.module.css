@@ -2,14 +2,27 @@
   position: relative;
   overflow: hidden;
   min-height: calc(100vh - var(--navbar-height));
-  background: var(--color-bg-ruin);
+  background-color: var(--color-bg-ruin);
+  background-image: url('/src/assets/about_bg.png');
+  background-size: cover;
+  background-position: center;
   padding: 80px 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-hero-overlay);
+  z-index: 0;
+}
+
 .sectionLabel {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--color-accent-bio);
@@ -21,6 +34,8 @@
 .sectionLabel::before { content: '// '; opacity: 0.5; }
 
 .title {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-heading);
   font-size: clamp(32px, 5vw, 56px);
   font-weight: 900;
@@ -30,6 +45,8 @@
 }
 
 .grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 60px;
@@ -73,7 +90,7 @@
 
 .logCard {
   border: 1px solid var(--color-accent-vine-border);
-  background: var(--color-bg-overgrown-card);
+  background: rgba(43, 45, 30, 0.85);
   padding: 28px 32px;
 }
 

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import PageTransition from '../components/PageTransition'
 import VineSVG from '../components/VineSVG'
+import BurnPhoto from '../components/BurnPhoto'
 import styles from './About.module.css'
 
 export default function About(): React.JSX.Element {
@@ -34,8 +35,7 @@ export default function About(): React.JSX.Element {
 
         <div className={styles.grid}>
           <div ref={leftRef} className={styles.photoWrapper}>
-            {/* Replace src with actual photo path when available */}
-            <div className={styles.photoPlaceholder} aria-hidden="true">[ PHOTO ]</div>
+            <BurnPhoto />
           </div>
 
           <div ref={rightRef} className={styles.bio}>

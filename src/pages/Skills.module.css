@@ -1,9 +1,27 @@
 .skills {
   min-height: calc(100vh - var(--navbar-height));
-  background: var(--color-bg-overgrown);
+  background-color: var(--color-bg-overgrown);
+  background-image: url('/src/assets/about_bg.png');
+  background-size: cover;
+  background-position: center;
   padding: 80px 320px;
   position: relative;
   overflow: hidden;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-hero-overlay);
+  z-index: 0;
+}
+
+.sectionLabel,
+.title,
+.group {
+  position: relative;
+  z-index: 1;
 }
 
 .sectionLabel {

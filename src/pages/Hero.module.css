@@ -8,7 +8,7 @@
   padding: 60px 320px;
   overflow: hidden;
   background-color: var(--color-bg-overgrown);
-  background-image: url('/src/assets/test.jpg');
+  background-image: url('/src/assets/home_bg.png');
   background-size: cover;
   background-position: center;
 }

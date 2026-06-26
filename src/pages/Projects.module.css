@@ -1,9 +1,27 @@
 .projects {
   min-height: calc(100vh - var(--navbar-height));
-  background: var(--color-bg-ruin);
+  background-color: var(--color-bg-ruin);
+  background-image: url('/src/assets/about_bg.png');
+  background-size: cover;
+  background-position: center;
   padding: 80px 320px;
   position: relative;
   overflow: hidden;
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-hero-overlay);
+  z-index: 0;
+}
+
+.sectionLabel,
+.title,
+.grid {
+  position: relative;
+  z-index: 1;
 }
 
 .sectionLabel {
