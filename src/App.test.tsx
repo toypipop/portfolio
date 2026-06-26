@@ -3,5 +3,5 @@ import App from './App'
 
 test('renders without crashing', () => {
   render(<App />)
-  expect(screen.getByText(/PONGY/i)).toBeInTheDocument()
+  expect(screen.getAllByText(/PONGY/i).length).toBeGreaterThan(0)
 })
