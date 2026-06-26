@@ -1,0 +1,117 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-height);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: rgba(26, 26, 20, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-accent-vine);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--color-text-bleached);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--color-accent-bio);
+  text-shadow: 0 0 8px rgba(90, 140, 122, 0.5);
+}
+
+.links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-dust);
+  text-decoration: none;
+  transition: color 150ms ease;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.link:hover {
+  color: var(--color-text-bleached);
+}
+
+.link.active {
+  color: var(--color-accent-bio);
+  border-bottom-color: var(--color-accent-bio);
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-bleached);
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+/* Mobile overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 20, 0.98);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.overlay.open {
+  display: flex;
+}
+
+.overlayLink {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-text-bleached);
+  text-decoration: none;
+}
+
+.overlayLink.active {
+  color: var(--color-accent-bio);
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
