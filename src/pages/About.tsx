@@ -26,7 +26,7 @@ export default function About(): React.JSX.Element {
 
   return (
     <PageTransition>
-      <section className={styles.about} style={{ position: 'relative', overflow: 'hidden' }}>
+      <section className={styles.about}>
         <VineSVG position="top-right" width={160} height={220} opacity={0.4} />
 
         <p className={styles.sectionLabel}>About</p>
@@ -35,7 +35,7 @@ export default function About(): React.JSX.Element {
         <div className={styles.grid}>
           <div ref={leftRef} className={styles.photoWrapper}>
             {/* Replace src with actual photo path when available */}
-            <div className={styles.photoPlaceholder}>[ PHOTO ]</div>
+            <div className={styles.photoPlaceholder} aria-hidden="true">[ PHOTO ]</div>
           </div>
 
           <div ref={rightRef} className={styles.bio}>

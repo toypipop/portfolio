@@ -92,6 +92,12 @@
   letter-spacing: 1px;
 }
 
+.linkDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .footer {
   position: absolute;
   bottom: 24px;

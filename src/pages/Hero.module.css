@@ -92,6 +92,9 @@
 }
 
 .btnPrimary {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
   background: transparent;
   border: 1px solid var(--color-accent-bio);
   color: var(--color-accent-bio);
@@ -110,6 +113,9 @@
 }
 
 .btnSecondary {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
   background: transparent;
   border: 1px solid var(--color-bleached-border);
   color: var(--color-text-bleached);

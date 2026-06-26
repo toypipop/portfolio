@@ -9,7 +9,7 @@ import styles from './Projects.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project }: { project: Project }): React.JSX.Element {
   return (
     <div className={styles.card}>
       {project.image ? (

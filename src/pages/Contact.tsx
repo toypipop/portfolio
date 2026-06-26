@@ -6,7 +6,7 @@ import styles from './Contact.module.css'
 
 const CONTACT_LINKS = [
   {
-    href: 'https://github.com/[username]',
+    href: null as string | null,
     label: 'GitHub',
     value: 'github.com/[username]',
     icon: '⌥',
@@ -18,9 +18,9 @@ const CONTACT_LINKS = [
     icon: '✉',
   },
   {
-    href: 'tel:+66[number]',
+    href: null as string | null,
     label: 'Phone',
-    value: '[phone number]',
+    value: '[coming soon]',
     icon: '◈',
   },
 ]
@@ -61,21 +61,31 @@ export default function Contact(): React.JSX.Element {
         </p>
 
         <div ref={linksRef} className={styles.links}>
-          {CONTACT_LINKS.map(({ href, label, value, icon }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith('http') ? '_blank' : undefined}
-              rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className={styles.link}
-            >
-              <span className={styles.linkIcon}>{icon}</span>
-              <div className={styles.linkContent}>
-                <div className={styles.linkLabel}>{label}</div>
-                <div className={styles.linkValue}>{value}</div>
+          {CONTACT_LINKS.map(({ href, label, value, icon }) =>
+            href ? (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith('http') ? '_blank' : undefined}
+                rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={styles.link}
+              >
+                <span className={styles.linkIcon}>{icon}</span>
+                <div className={styles.linkContent}>
+                  <div className={styles.linkLabel}>{label}</div>
+                  <div className={styles.linkValue}>{value}</div>
+                </div>
+              </a>
+            ) : (
+              <div key={label} className={`${styles.link} ${styles.linkDisabled}`}>
+                <span className={styles.linkIcon}>{icon}</span>
+                <div className={styles.linkContent}>
+                  <div className={styles.linkLabel}>{label}</div>
+                  <div className={styles.linkValue}>{value}</div>
+                </div>
               </div>
-            </a>
-          ))}
+            )
+          )}
         </div>
 
         <div className={styles.footer}>

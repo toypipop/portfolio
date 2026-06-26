@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import PageTransition from '../components/PageTransition'
 import VineSVG from '../components/VineSVG'
 import SporeCanvas from '../components/SporeCanvas'
@@ -6,8 +6,6 @@ import GlitchText from '../components/GlitchText'
 import styles from './Hero.module.css'
 
 export default function Hero(): React.JSX.Element {
-  const navigate = useNavigate()
-
   return (
     <PageTransition>
       <section className={styles.hero}>
@@ -26,12 +24,8 @@ export default function Hero(): React.JSX.Element {
             Systems built to last through the collapse.
           </p>
           <div className={styles.cta}>
-            <button className={styles.btnPrimary} onClick={() => navigate('/projects')}>
-              [ VIEW WORK ]
-            </button>
-            <button className={styles.btnSecondary} onClick={() => navigate('/contact')}>
-              CONTACT
-            </button>
+            <Link to="/projects" className={styles.btnPrimary}>[ VIEW WORK ]</Link>
+            <Link to="/contact" className={styles.btnSecondary}>CONTACT</Link>
           </div>
         </div>
 

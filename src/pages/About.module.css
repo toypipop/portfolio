@@ -1,4 +1,6 @@
 .about {
+  position: relative;
+  overflow: hidden;
   min-height: calc(100vh - var(--navbar-height));
   background: var(--color-bg-ruin);
   padding: 80px 80px;

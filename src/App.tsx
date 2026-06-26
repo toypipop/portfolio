@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './pages/Hero'
@@ -7,6 +8,22 @@ import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import './styles/globals.css'
+
+function ScrollToTop(): null {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
+function NotFound(): React.JSX.Element {
+  return (
+    <div style={{ padding: '120px 40px', textAlign: 'center', color: 'var(--color-text-dust)', fontFamily: 'var(--font-mono)' }}>
+      <p style={{ color: 'var(--color-accent-bio)', letterSpacing: '4px', marginBottom: '16px' }}>// 404</p>
+      <p style={{ marginBottom: '32px' }}>Signal lost. Page not found.</p>
+      <Link to="/" style={{ color: 'var(--color-accent-bio)' }}>← Return to base</Link>
+    </div>
+  )
+}
 
 function AnimatedRoutes(): React.JSX.Element {
   const location = useLocation()
@@ -18,6 +35,7 @@ function AnimatedRoutes(): React.JSX.Element {
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   )
@@ -26,6 +44,7 @@ function AnimatedRoutes(): React.JSX.Element {
 export default function App(): React.JSX.Element {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <main>
         <AnimatedRoutes />
