@@ -3,7 +3,7 @@
   overflow: hidden;
   min-height: calc(100vh - var(--navbar-height));
   background: var(--color-bg-ruin);
-  padding: 80px 80px;
+  padding: 80px 160px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +125,7 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 48px 24px;
+    padding: 48px 48px;
   }
 
   .grid {

@@ -1,7 +1,7 @@
 .skills {
   min-height: calc(100vh - var(--navbar-height));
   background: var(--color-bg-overgrown);
-  padding: 80px 80px;
+  padding: 80px 160px;
   position: relative;
   overflow: hidden;
 }
@@ -70,6 +70,6 @@
 
 @media (max-width: 768px) {
   .skills {
-    padding: 48px 24px;
+    padding: 48px 48px;
   }
 }
