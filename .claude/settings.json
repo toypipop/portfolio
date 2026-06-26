@@ -28,7 +28,21 @@
       "Bash(npm run *)",
       "Bash(npm ls *)",
       "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 4)",
-      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 24568badc2b0db57b0c586188617dd2965bcb3c5 HEAD)"
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 24568badc2b0db57b0c586188617dd2965bcb3c5 HEAD)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 5)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" d298e7e16c726ae1a6c1a0f2ea751816360a8b82 HEAD)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 6)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 7)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 4fa83bfaed3685ac0dc6611afa761d236c841904 HEAD)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 5be17221b11b99b7923c921cbbe666070970edd7 HEAD)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 8)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 9)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 409df29b45ca48d3238b47c38224514f5e323b13 HEAD)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 07b2b341a055f3e2eb4491ec2886eb9501d51d77 HEAD)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 10)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" d22637d6bfa14afb65e4765e81b2a8c59bddbc9e HEAD)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 6cd3239 HEAD)",
+      "mcp__plugin_context-mode_context-mode__ctx_search"
     ],
     "additionalDirectories": [
       "c:\\Users\\toypipop\\portfolio\\temp-react"
