@@ -29,7 +29,6 @@ export default function Hero(): React.JSX.Element {
           </div>
         </div>
 
-        <span className={styles.scrollHint}>SCROLL</span>
       </section>
     </PageTransition>
   )
