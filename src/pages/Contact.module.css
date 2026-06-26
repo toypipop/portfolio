@@ -1,0 +1,103 @@
+.contact {
+  min-height: calc(100vh - var(--navbar-height));
+  background: var(--color-bg-overgrown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.signal {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-accent-bio);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900;
+  color: var(--color-text-bleached);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-dust);
+  margin-bottom: 60px;
+  max-width: 360px;
+  line-height: 1.8;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  border: 1px solid var(--color-accent-vine-border);
+  background: var(--color-bg-overgrown-card-dim);
+  text-decoration: none;
+  transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.link:hover {
+  border-color: var(--color-accent-bio);
+  background: var(--color-bg-overgrown-card);
+  box-shadow: 0 0 20px var(--color-accent-bio-glow-dim);
+}
+
+.linkIcon {
+  font-size: 18px;
+  color: var(--color-accent-bio);
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.linkContent {
+  text-align: left;
+}
+
+.linkLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-accent-vine);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.linkValue {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-bleached);
+  letter-spacing: 1px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 24px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-text-dust-faded);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
