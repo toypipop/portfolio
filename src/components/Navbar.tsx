@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { to: '/contact', label: 'Contact' },
 ]
 
-export default function Navbar() {
+export default function Navbar(): React.JSX.Element {
   const [open, setOpen] = useState(false)
 
   const getLinkClass = ({ isActive }: { isActive: boolean }) =>

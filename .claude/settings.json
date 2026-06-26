@@ -26,7 +26,9 @@
       "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 3)",
       "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" bd805af3ca213dc4706e72f33dc18d528d37a5d6 HEAD)",
       "Bash(npm run *)",
-      "Bash(npm ls *)"
+      "Bash(npm ls *)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/task-brief\" \"c:/Users/toypipop/portfolio/docs/superpowers/plans/2026-06-26-portfolio-implementation.md\" 4)",
+      "Bash(bash \"C:/Users/toypipop/.claude/plugins/cache/superpowers-marketplace/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 24568badc2b0db57b0c586188617dd2965bcb3c5 HEAD)"
     ],
     "additionalDirectories": [
       "c:\\Users\\toypipop\\portfolio\\temp-react"

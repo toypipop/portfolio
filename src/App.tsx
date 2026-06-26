@@ -8,7 +8,7 @@ import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import './styles/globals.css'
 
-function AnimatedRoutes() {
+function AnimatedRoutes(): React.JSX.Element {
   const location = useLocation()
   return (
     <AnimatePresence mode="wait">
@@ -23,7 +23,7 @@ function AnimatedRoutes() {
   )
 }
 
-export default function App() {
+export default function App(): React.JSX.Element {
   return (
     <BrowserRouter>
       <Navbar />
