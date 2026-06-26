@@ -13,9 +13,11 @@ interface Spore {
 
 interface SporeCanvasProps {
   count?: number
+  maxAlpha?: number
+  maxRadius?: number
 }
 
-export default function SporeCanvas({ count = 50 }: SporeCanvasProps): React.JSX.Element {
+export default function SporeCanvas({ count = 50, maxAlpha = 0.6, maxRadius = 2.5 }: SporeCanvasProps): React.JSX.Element {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -40,8 +42,8 @@ export default function SporeCanvas({ count = 50 }: SporeCanvasProps): React.JSX
         y: Math.random() * canvas.height,
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3 - 0.1,
-        radius: Math.random() * 2 + 0.5,
-        alpha: Math.random() * 0.5 + 0.1,
+        radius: Math.random() * (maxRadius - 0.5) + 0.5,
+        alpha: Math.random() * (maxAlpha - 0.1) + 0.1,
         alphaDir: Math.random() > 0.5 ? 1 : -1,
       }))
     }
@@ -55,7 +57,7 @@ export default function SporeCanvas({ count = 50 }: SporeCanvasProps): React.JSX
         s.x += s.vx
         s.y += s.vy
         s.alpha += 0.003 * s.alphaDir
-        if (s.alpha > 0.6 || s.alpha < 0.05) s.alphaDir *= -1
+        if (s.alpha > maxAlpha || s.alpha < 0.05) s.alphaDir *= -1
         if (s.x < 0) s.x = canvas.width
         if (s.x > canvas.width) s.x = 0
         if (s.y < 0) s.y = canvas.height
@@ -85,7 +87,7 @@ export default function SporeCanvas({ count = 50 }: SporeCanvasProps): React.JSX
       cancelAnimationFrame(animId)
       observer.disconnect()
     }
-  }, [count])
+  }, [count, maxAlpha, maxRadius])
 
   return <canvas ref={canvasRef} className={styles.canvas} />
 }

@@ -9,21 +9,21 @@ export default function Hero(): React.JSX.Element {
     <PageTransition>
       <section className={styles.hero}>
         <div className={styles.content}>
-          <p className={styles.eyebrow}>Web Developer · Chiang Mai</p>
-          <div className={styles.nameWrapper}>
-            <SporeCanvas count={30} />
+          <SporeCanvas count={80} maxAlpha={0.85} maxRadius={3} />
+          <div className={styles.contentInner}>
+            <p className={styles.eyebrow}>Web Developer · Chiang Mai</p>
             <GlitchText tag="h1" className={styles.name}>PONGYANIN</GlitchText>
-          </div>
-          <p className={styles.role}>AUSSWAPIPOP</p>
-          <div className={styles.divider} />
-          <p className={styles.summary}>
-            Backend-focused Web Developer with hands-on experience building full-stack
-            applications using Django, Go, React, PostgreSQL, and Docker.
-            Systems built to last through the collapse.
-          </p>
-          <div className={styles.cta}>
-            <Link to="/projects" className={styles.btnPrimary}>[ VIEW WORK ]</Link>
-            <Link to="/contact" className={styles.btnSecondary}>CONTACT</Link>
+            <p className={styles.role}>AUSSWAPIPOP</p>
+            <div className={styles.divider} />
+            <p className={styles.summary}>
+              Backend-focused Web Developer with hands-on experience building full-stack
+              applications using Django, Go, React, PostgreSQL, and Docker.
+              Systems built to last through the collapse.
+            </p>
+            <div className={styles.cta}>
+              <Link to="/projects" className={styles.btnPrimary}>[ VIEW WORK ]</Link>
+              <Link to="/contact" className={styles.btnSecondary}>CONTACT</Link>
+            </div>
           </div>
         </div>
       </section>

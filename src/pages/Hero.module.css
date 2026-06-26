@@ -40,11 +40,9 @@
 .eyebrow::before { content: '[ '; opacity: 0.6; }
 .eyebrow::after  { content: ' ]'; opacity: 0.6; }
 
-.nameWrapper {
+.contentInner {
   position: relative;
-  display: inline-block;
-  padding: 24px 40px;
-  margin: -24px -40px 8px;
+  z-index: 2;
 }
 
 .name {
@@ -54,8 +52,7 @@
   color: var(--color-text-bleached);
   line-height: 1;
   text-transform: uppercase;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 8px;
 }
 
 .role {
