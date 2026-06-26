@@ -1,0 +1,380 @@
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .palette-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+  .swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .swatch-box { width: 72px; height: 48px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); }
+  .swatch-label { font-size: 11px; color: #b5a07a; font-family: monospace; text-align: center; }
+  .swatch-hex { font-size: 10px; color: #888; font-family: monospace; }
+
+  .site-preview {
+    border: 1px solid #4a6741;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 24px;
+  }
+
+  /* NAVBAR — lighter */
+  .mock-navbar {
+    background: rgba(43,45,30,0.97);
+    border-bottom: 1px solid #4a6741;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mock-logo {
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #d4c9a8;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .mock-logo span { color: #5a8c7a; text-shadow: 0 0 8px rgba(90,140,122,0.5); }
+  .mock-nav-links { display: flex; gap: 20px; }
+  .mock-nav-link {
+    font-size: 11px; color: #b5a07a;
+    text-transform: uppercase; letter-spacing: 2px;
+    font-family: monospace; cursor: pointer;
+  }
+  .mock-nav-link.active {
+    color: #5a8c7a;
+    border-bottom: 1px solid #5a8c7a;
+    padding-bottom: 2px;
+  }
+
+  /* HERO — shifted lighter */
+  .mock-hero {
+    background: #2b2d1e;
+    min-height: 360px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 44px 52px;
+    overflow: hidden;
+  }
+
+  /* Soft fog — lighter radial */
+  .mock-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 85% 50%, rgba(212,201,168,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 70% at 15% 90%, rgba(74,103,65,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* VINE decorations — top-right climbing */
+  .vine-tr {
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 280px;
+    opacity: 0.7;
+  }
+  /* VINE decoration — bottom-left */
+  .vine-bl {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 160px; height: 200px;
+    opacity: 0.55;
+  }
+
+  .hero-tag {
+    font-family: monospace;
+    font-size: 11px;
+    color: #5a8c7a;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .hero-tag::before { content: '[ '; opacity: 0.5; }
+  .hero-tag::after  { content: ' ]'; opacity: 0.5; }
+
+  .hero-name {
+    font-size: 56px;
+    font-weight: 900;
+    color: #d4c9a8;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero-name .g { color: #5a8c7a; text-shadow: 0 0 24px rgba(90,140,122,0.5); }
+
+  .hero-role {
+    font-family: monospace;
+    font-size: 14px;
+    color: #d4c9a8;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0.8;
+  }
+  .hero-role::after { content: '|'; color: #5a8c7a; margin-left: 2px; }
+
+  .hero-divider {
+    width: 80px; height: 2px;
+    background: linear-gradient(90deg, #5a8c7a, #4a6741, transparent);
+    margin-bottom: 20px;
+  }
+
+  .hero-summary {
+    font-size: 13px;
+    color: #c4b898;
+    max-width: 500px;
+    line-height: 1.8;
+    margin-bottom: 36px;
+    position: relative;
+  }
+
+  .hero-cta { display: flex; gap: 14px; position: relative; }
+  .btn-primary {
+    background: transparent;
+    border: 1px solid #5a8c7a;
+    color: #5a8c7a;
+    padding: 10px 28px;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(90,140,122,0.25), inset 0 0 16px rgba(90,140,122,0.05);
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(212,201,168,0.3);
+    color: #d4c9a8;
+    padding: 10px 28px;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  /* Spore dots */
+  .spore { position: absolute; border-radius: 50%; background: #5a8c7a; }
+  .s1{width:3px;height:3px;top:28%;right:38%;opacity:0.5;}
+  .s2{width:2px;height:2px;top:55%;right:28%;opacity:0.35;}
+  .s3{width:4px;height:4px;top:18%;right:52%;opacity:0.25;}
+  .s4{width:2px;height:2px;top:72%;right:42%;opacity:0.4;}
+  .s5{width:3px;height:3px;top:42%;right:22%;opacity:0.3;}
+  .s6{width:2px;height:2px;top:60%;right:60%;opacity:0.2;}
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 14px; left: 50%;
+    transform: translateX(-50%);
+    font-family: monospace;
+    font-size: 10px;
+    color: rgba(212,201,168,0.35);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .scroll-hint::after { content: ' ↓'; color: #5a8c7a; }
+
+  /* SECTION THUMBS */
+  .sections-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #1a1a14;
+  }
+  .section-thumb {
+    background: #2b2d1e;
+    padding: 14px 16px;
+    min-height: 80px;
+    position: relative;
+  }
+  .section-thumb:nth-child(odd) { background: #252719; }
+  .section-thumb-label {
+    font-family: monospace; font-size: 10px;
+    color: #5a8c7a; letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .section-thumb-desc {
+    font-size: 10px; color: rgba(212,201,168,0.45);
+    font-family: monospace; line-height: 1.5;
+  }
+  .section-vine-bar {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, #4a6741, transparent);
+  }
+
+  /* ANNOTATIONS */
+  .annotations { margin-top: 20px; }
+  .annotation { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; font-family:monospace; font-size:12px; }
+  .ann-tag {
+    background: rgba(90,140,122,0.12); border: 1px solid rgba(90,140,122,0.35);
+    color: #5a8c7a; padding: 2px 8px; font-size: 10px;
+    letter-spacing: 1px; white-space: nowrap; text-transform: uppercase;
+  }
+  .ann-text { color: #c4b898; line-height: 1.5; }
+
+  h2 { color: #d4c9a8; margin-bottom: 6px; font-family: monospace; letter-spacing: 2px; text-transform: uppercase; font-size: 16px; }
+  p.sub { color: #b5a07a; font-family: monospace; font-size: 12px; margin-bottom: 20px; }
+  .section-block { margin-bottom: 28px; }
+</style>
+
+<div class="section-block">
+  <h2>Color Palette v2 — More Light</h2>
+  <p class="sub">Shifted: less deep ruin, more bleached + dust as primary surface</p>
+  <div class="palette-row">
+    <div class="swatch">
+      <div class="swatch-box" style="background:#1a1a14"></div>
+      <div class="swatch-label">Deep Ruin</div>
+      <div class="swatch-hex">accent only</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#2b2d1e; border: 2px solid #5a8c7a;"></div>
+      <div class="swatch-label">Overgrown ★</div>
+      <div class="swatch-hex">main BG</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#d4c9a8; border: 2px solid #5a8c7a;"></div>
+      <div class="swatch-label">Bleached ★</div>
+      <div class="swatch-hex">heading + UI</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#c4b898; border: 2px solid #5a8c7a;"></div>
+      <div class="swatch-label">Dust+ ★</div>
+      <div class="swatch-hex">body text</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#5a8c7a; box-shadow:0 0 12px rgba(90,140,122,0.6)"></div>
+      <div class="swatch-label">Bioluminescent</div>
+      <div class="swatch-hex">#5a8c7a</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#4a6741"></div>
+      <div class="swatch-label">Vine/Moss</div>
+      <div class="swatch-hex">#4a6741</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#a85c3a"></div>
+      <div class="swatch-label">Rust</div>
+      <div class="swatch-hex">#a85c3a</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Hero Page v2 — Vine Decoration</h2>
+  <p class="sub">BG: #2b2d1e (overgrown) · Text: bleached + dust · Vines climbing corners</p>
+  <div class="site-preview">
+    <div class="mock-navbar">
+      <div class="mock-logo">PONGY<span>A</span>NIN</div>
+      <div class="mock-nav-links">
+        <div class="mock-nav-link active">Home</div>
+        <div class="mock-nav-link">About</div>
+        <div class="mock-nav-link">Skills</div>
+        <div class="mock-nav-link">Projects</div>
+        <div class="mock-nav-link">Contact</div>
+      </div>
+    </div>
+
+    <div class="mock-hero">
+      <!-- Vine top-right: climbing tendrils -->
+      <svg class="vine-tr" viewBox="0 0 200 280" fill="none">
+        <!-- Main stems -->
+        <path d="M200 0 C180 30 190 70 170 100 C155 125 165 155 145 180 C130 200 140 230 120 260" stroke="#4a6741" stroke-width="1.5" fill="none" opacity="0.7"/>
+        <path d="M200 0 C195 40 185 80 175 110 C165 140 170 170 155 195" stroke="#4a6741" stroke-width="1" fill="none" opacity="0.4"/>
+        <!-- Leaf tendrils off main stem -->
+        <path d="M170 100 C155 88 140 92 135 105 C148 98 158 102 170 100Z" fill="#4a6741" opacity="0.55"/>
+        <path d="M145 180 C128 165 112 170 108 183 C122 175 134 178 145 180Z" fill="#4a6741" opacity="0.5"/>
+        <path d="M155 195 C175 185 185 195 180 208 C170 198 162 196 155 195Z" fill="#4a6741" opacity="0.4"/>
+        <path d="M175 110 C192 100 200 110 197 122 C188 112 181 110 175 110Z" fill="#4a6741" opacity="0.35"/>
+        <!-- Thin curling tendrils -->
+        <path d="M145 180 C130 188 125 200 130 210" stroke="#4a6741" stroke-width="0.8" fill="none" opacity="0.4"/>
+        <path d="M170 100 C160 112 162 125 170 128" stroke="#4a6741" stroke-width="0.8" fill="none" opacity="0.35"/>
+        <!-- Bioluminescent spore dots on vine -->
+        <circle cx="145" cy="180" r="2" fill="#5a8c7a" opacity="0.6"/>
+        <circle cx="170" cy="100" r="1.5" fill="#5a8c7a" opacity="0.5"/>
+        <circle cx="120" cy="260" r="2.5" fill="#5a8c7a" opacity="0.4"/>
+        <circle cx="155" cy="195" r="1.5" fill="#5a8c7a" opacity="0.45"/>
+      </svg>
+
+      <!-- Vine bottom-left: ground crawling up -->
+      <svg class="vine-bl" viewBox="0 0 160 200" fill="none">
+        <path d="M0 200 C20 175 10 145 30 120 C45 100 35 72 55 50 C68 35 60 15 80 0" stroke="#4a6741" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M0 200 C25 180 15 150 35 128" stroke="#4a6741" stroke-width="1" fill="none" opacity="0.35"/>
+        <!-- Leaves -->
+        <path d="M30 120 C15 108 0 112 -2 125 C12 117 22 118 30 120Z" fill="#4a6741" opacity="0.5"/>
+        <path d="M55 50 C68 38 80 42 79 55 C68 46 61 48 55 50Z" fill="#4a6741" opacity="0.45"/>
+        <path d="M35 128 C50 118 60 122 58 134 C47 125 40 126 35 128Z" fill="#4a6741" opacity="0.4"/>
+        <!-- Spore dots -->
+        <circle cx="30" cy="120" r="2" fill="#5a8c7a" opacity="0.5"/>
+        <circle cx="55" cy="50" r="1.5" fill="#5a8c7a" opacity="0.4"/>
+      </svg>
+
+      <div class="spore s1"></div>
+      <div class="spore s2"></div>
+      <div class="spore s3"></div>
+      <div class="spore s4"></div>
+      <div class="spore s5"></div>
+      <div class="spore s6"></div>
+
+      <div class="hero-tag">Web Developer · Chiang Mai</div>
+      <div class="hero-name">PONGY<span class="g">A</span>NIN</div>
+      <div class="hero-role">AUSSWAPIPOP</div>
+      <div class="hero-divider"></div>
+      <div class="hero-summary">
+        Backend-focused. Django · Go · React · PostgreSQL · Docker.<br>
+        Systems built to last through the collapse.
+      </div>
+      <div class="hero-cta">
+        <button class="btn-primary">[ VIEW WORK ]</button>
+        <button class="btn-secondary">CONTACT</button>
+      </div>
+      <div class="scroll-hint">SCROLL</div>
+    </div>
+
+    <div class="sections-row">
+      <div class="section-thumb">
+        <div class="section-thumb-label">About</div>
+        <div class="section-thumb-desc">Two-col · photo + bio<br>"Survivor log" card</div>
+        <div class="section-vine-bar"></div>
+      </div>
+      <div class="section-thumb">
+        <div class="section-thumb-label">Skills</div>
+        <div class="section-thumb-desc">Tag grid · GSAP reveal<br>Vine dividers per group</div>
+        <div class="section-vine-bar"></div>
+      </div>
+      <div class="section-thumb">
+        <div class="section-thumb-label">Projects</div>
+        <div class="section-thumb-desc">2-col cards · glass<br>Vine border on hover</div>
+        <div class="section-vine-bar"></div>
+      </div>
+      <div class="section-thumb">
+        <div class="section-thumb-label">Contact</div>
+        <div class="section-thumb-desc">Centered · icon links<br>GitHub · Email · Phone</div>
+        <div class="section-vine-bar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-block annotations">
+  <h2>Changes from v1</h2>
+  <div class="annotation">
+    <span class="ann-tag">BG</span>
+    <span class="ann-text">#1a1a14 → #2b2d1e เป็น main hero bg (สว่างขึ้น ~30%) · deep ruin เหลือใช้เป็น section divider/footer เท่านั้น</span>
+  </div>
+  <div class="annotation">
+    <span class="ann-tag">TEXT</span>
+    <span class="ann-text">Role text เปลี่ยนเป็น #d4c9a8 (bleached) · body text #c4b898 (dust สว่างขึ้น) · อ่านง่ายขึ้นชัดเจน</span>
+  </div>
+  <div class="annotation">
+    <span class="ann-tag">VINE</span>
+    <span class="ann-text">SVG เถาวัลย์แทน moss corner — มี stem + leaf + curling tendril + bioluminescent spore dots บนเถา</span>
+  </div>
+  <div class="annotation">
+    <span class="ann-tag">GSAP</span>
+    <span class="ann-text">Vine SVG ใช้ stroke-dashoffset animation — เถาเลื้อยขึ้นมาตอน load ช้าๆ เหมือนงอกจริง</span>
+  </div>
+</div>

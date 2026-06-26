@@ -10,7 +10,7 @@ interface GlitchTextProps {
 
 const GLITCH_CHARS = '!<>-_\\/[]{}—=+*^?#'
 
-export default function GlitchText({ children, tag: Tag = 'h1', className }: GlitchTextProps) {
+export default function GlitchText({ children, tag: Tag = 'h1', className }: GlitchTextProps): React.JSX.Element {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ref = useRef<any>(null)
 

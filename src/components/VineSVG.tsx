@@ -16,7 +16,7 @@ const positionClass: Record<VineSVGProps['position'], string> = {
   'bottom-right': styles.bottomRight,
 }
 
-export default function VineSVG({ position, width = 200, height = 280, opacity = 0.7 }: VineSVGProps) {
+export default function VineSVG({ position, width = 200, height = 280, opacity = 0.7 }: VineSVGProps): React.JSX.Element {
   const svgRef = useRef<SVGSVGElement>(null)
   const isRight = position.includes('right')
   const isBottom = position.includes('bottom')

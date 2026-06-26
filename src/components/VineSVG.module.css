@@ -1,0 +1,25 @@
+.vine {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.vine.topRight {
+  top: 0;
+  right: 0;
+}
+
+.vine.bottomLeft {
+  bottom: 0;
+  left: 0;
+}
+
+.vine.topLeft {
+  top: 0;
+  left: 0;
+}
+
+.vine.bottomRight {
+  bottom: 0;
+  right: 0;
+}

@@ -10,7 +10,7 @@ const variants = {
   exit: { opacity: 0, x: -20 },
 }
 
-export default function PageTransition({ children }: PageTransitionProps) {
+export default function PageTransition({ children }: PageTransitionProps): React.JSX.Element {
   return (
     <motion.div
       variants={variants}

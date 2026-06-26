@@ -15,7 +15,7 @@ interface SporeCanvasProps {
   count?: number
 }
 
-export default function SporeCanvas({ count = 50 }: SporeCanvasProps) {
+export default function SporeCanvas({ count = 50 }: SporeCanvasProps): React.JSX.Element {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -23,6 +23,8 @@ export default function SporeCanvas({ count = 50 }: SporeCanvasProps) {
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
+
+    const bioColor = getComputedStyle(canvas).getPropertyValue('--color-accent-bio').trim() || '#5a8c7a'
 
     let animId: number
     let spores: Spore[] = []
@@ -58,10 +60,12 @@ export default function SporeCanvas({ count = 50 }: SporeCanvasProps) {
 
         ctx.beginPath()
         ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(90, 140, 122, ${s.alpha})`
+        ctx.fillStyle = bioColor
+        ctx.globalAlpha = s.alpha
         ctx.shadowBlur = 6
-        ctx.shadowColor = 'rgba(90, 140, 122, 0.8)'
+        ctx.shadowColor = bioColor
         ctx.fill()
+        ctx.globalAlpha = 1
         ctx.shadowBlur = 0
       })
       animId = requestAnimationFrame(draw)

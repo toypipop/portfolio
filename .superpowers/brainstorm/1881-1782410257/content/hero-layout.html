@@ -1,0 +1,431 @@
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111 !important; }
+
+  .palette-row {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;
+  }
+  .swatch {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+  }
+  .swatch-box {
+    width: 72px; height: 48px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);
+  }
+  .swatch-label { font-size: 11px; color: #b5a07a; font-family: monospace; text-align: center; }
+  .swatch-hex { font-size: 10px; color: #666; font-family: monospace; }
+
+  /* MINI SITE PREVIEW */
+  .site-preview {
+    border: 1px solid #2b2d1e;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 24px;
+  }
+
+  /* NAVBAR */
+  .mock-navbar {
+    background: rgba(26,26,20,0.95);
+    border-bottom: 1px solid #2b2d1e;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(8px);
+  }
+  .mock-logo {
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #d4c9a8;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .mock-logo span { color: #5a8c7a; }
+  .mock-nav-links {
+    display: flex; gap: 20px;
+  }
+  .mock-nav-link {
+    font-size: 11px;
+    color: #b5a07a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: monospace;
+  }
+  .mock-nav-link.active {
+    color: #5a8c7a;
+    border-bottom: 1px solid #5a8c7a;
+    padding-bottom: 2px;
+  }
+
+  /* HERO SECTION */
+  .mock-hero {
+    background: #1a1a14;
+    min-height: 340px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 48px;
+    overflow: hidden;
+  }
+
+  /* Fog overlay */
+  .mock-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 80% 60%, rgba(43,45,30,0.5) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(26,26,20,0.8) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Cracked/vine corner decoration */
+  .mock-hero::after {
+    content: '';
+    position: absolute;
+    right: 0; bottom: 0;
+    width: 220px; height: 220px;
+    background:
+      radial-gradient(ellipse 80% 80% at 100% 100%, rgba(74,103,65,0.15) 0%, transparent 70%);
+    border-top-left-radius: 200px;
+    pointer-events: none;
+  }
+
+  .moss-corner {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 180px; height: 160px;
+    opacity: 0.35;
+  }
+
+  .hero-tag {
+    font-family: monospace;
+    font-size: 11px;
+    color: #5a8c7a;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .hero-tag::before {
+    content: '[ ';
+    opacity: 0.6;
+  }
+  .hero-tag::after {
+    content: ' ]';
+    opacity: 0.6;
+  }
+
+  .hero-name {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: #d4c9a8;
+    line-height: 1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .hero-name .glitch-accent {
+    color: #5a8c7a;
+    text-shadow: 0 0 20px rgba(90,140,122,0.4);
+  }
+
+  .hero-role {
+    font-family: monospace;
+    font-size: 15px;
+    color: #b5a07a;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .hero-role::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: #5a8c7a;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  .hero-divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, #5a8c7a, transparent);
+    margin-bottom: 20px;
+  }
+
+  .hero-summary {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: #b5a07a;
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .hero-cta {
+    display: flex; gap: 12px; position: relative;
+  }
+  .btn-primary {
+    background: transparent;
+    border: 1px solid #5a8c7a;
+    color: #5a8c7a;
+    padding: 10px 24px;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(90,140,122,0.2);
+    transition: all 0.2s;
+  }
+  .btn-primary:hover {
+    background: rgba(90,140,122,0.1);
+    box-shadow: 0 0 20px rgba(90,140,122,0.4);
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(181,160,122,0.3);
+    color: #b5a07a;
+    padding: 10px 24px;
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  /* Spore/particle dots */
+  .spore { position: absolute; border-radius: 50%; background: #5a8c7a; }
+  .s1 { width:3px;height:3px;top:30%;right:35%;opacity:0.4; }
+  .s2 { width:2px;height:2px;top:60%;right:25%;opacity:0.25; }
+  .s3 { width:4px;height:4px;top:20%;right:50%;opacity:0.2; }
+  .s4 { width:2px;height:2px;top:75%;right:40%;opacity:0.35; }
+  .s5 { width:3px;height:3px;top:45%;right:20%;opacity:0.3; }
+
+  /* SCROLL INDICATOR */
+  .scroll-hint {
+    position: absolute;
+    bottom: 16px; left: 50%;
+    transform: translateX(-50%);
+    font-family: monospace;
+    font-size: 10px;
+    color: rgba(181,160,122,0.4);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .scroll-hint::after {
+    content: ' ↓';
+    color: #5a8c7a;
+    opacity: 0.6;
+  }
+
+  /* SECTION PREVIEWS */
+  .sections-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #0d0d09;
+  }
+  .section-thumb {
+    background: #1a1a14;
+    padding: 16px;
+    min-height: 80px;
+    position: relative;
+    border-top: 1px solid #2b2d1e;
+  }
+  .section-thumb:nth-child(even) { background: #2b2d1e; }
+  .section-thumb-label {
+    font-family: monospace;
+    font-size: 10px;
+    color: #5a8c7a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .section-thumb-desc {
+    font-size: 10px;
+    color: rgba(181,160,122,0.5);
+    font-family: monospace;
+    line-height: 1.5;
+  }
+  .section-vine {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(74,103,65,0.4), transparent);
+  }
+
+  /* ANNOTATIONS */
+  .annotations {
+    margin-top: 20px;
+  }
+  .annotation {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 12px;
+  }
+  .ann-tag {
+    background: rgba(90,140,122,0.15);
+    border: 1px solid rgba(90,140,122,0.3);
+    color: #5a8c7a;
+    padding: 2px 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  .ann-text { color: #b5a07a; line-height: 1.5; }
+
+  h2 { color: #d4c9a8; margin-bottom: 6px; font-family: monospace; letter-spacing: 2px; text-transform: uppercase; font-size: 16px; }
+  p.sub { color: #b5a07a; font-family: monospace; font-size: 12px; margin-bottom: 20px; }
+  .section-block { margin-bottom: 28px; }
+</style>
+
+<div class="section-block">
+  <h2>Color Palette — TLoU2 Seattle</h2>
+  <p class="sub">Post-collapse. Overgrown. Bioluminescent in darkness.</p>
+  <div class="palette-row">
+    <div class="swatch">
+      <div class="swatch-box" style="background:#1a1a14"></div>
+      <div class="swatch-label">Deep Ruin</div>
+      <div class="swatch-hex">#1a1a14</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#2b2d1e"></div>
+      <div class="swatch-label">Overgrown</div>
+      <div class="swatch-hex">#2b2d1e</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#d4c9a8"></div>
+      <div class="swatch-label">Bleached</div>
+      <div class="swatch-hex">#d4c9a8</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#b5a07a"></div>
+      <div class="swatch-label">Concrete Dust</div>
+      <div class="swatch-hex">#b5a07a</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#5a8c7a; box-shadow: 0 0 12px rgba(90,140,122,0.6)"></div>
+      <div class="swatch-label">Bioluminescent</div>
+      <div class="swatch-hex">#5a8c7a</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#4a6741"></div>
+      <div class="swatch-label">Moss</div>
+      <div class="swatch-hex">#4a6741</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-box" style="background:#a85c3a"></div>
+      <div class="swatch-label">Rust Danger</div>
+      <div class="swatch-hex">#a85c3a</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Hero Page — Layout Preview</h2>
+  <p class="sub">Fixed navbar + full-viewport hero + section thumbnails</p>
+  <div class="site-preview">
+    <!-- NAVBAR -->
+    <div class="mock-navbar">
+      <div class="mock-logo">PONG<span>YA</span>NIN</div>
+      <div class="mock-nav-links">
+        <div class="mock-nav-link active">Home</div>
+        <div class="mock-nav-link">About</div>
+        <div class="mock-nav-link">Skills</div>
+        <div class="mock-nav-link">Projects</div>
+        <div class="mock-nav-link">Contact</div>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="mock-hero">
+      <div class="spore s1"></div>
+      <div class="spore s2"></div>
+      <div class="spore s3"></div>
+      <div class="spore s4"></div>
+      <div class="spore s5"></div>
+
+      <svg class="moss-corner" viewBox="0 0 180 160" fill="none">
+        <path d="M180 160 C140 140 120 100 160 60 C140 80 100 90 80 120 C100 100 80 80 60 100 C80 80 60 60 40 80 C60 60 40 40 20 60 C40 40 20 20 0 40 L0 160 Z" fill="#4a6741" opacity="0.5"/>
+        <path d="M180 160 C160 150 150 130 170 110" stroke="#5a8c7a" stroke-width="1" opacity="0.3"/>
+        <circle cx="120" cy="110" r="3" fill="#5a8c7a" opacity="0.5"/>
+        <circle cx="90" cy="130" r="2" fill="#5a8c7a" opacity="0.4"/>
+        <circle cx="150" cy="95" r="2" fill="#5a8c7a" opacity="0.3"/>
+      </svg>
+
+      <div class="hero-tag">Web Developer</div>
+      <div class="hero-name">PONGY<span class="glitch-accent">A</span>NIN</div>
+      <div class="hero-role">AUSSWAPIPOP</div>
+      <div class="hero-divider"></div>
+      <div class="hero-summary">
+        Backend-focused Web Developer. Django · Go · React · PostgreSQL · Docker.<br>
+        Building systems that survive.
+      </div>
+      <div class="hero-cta">
+        <button class="btn-primary">[ VIEW WORK ]</button>
+        <button class="btn-secondary">CONTACT</button>
+      </div>
+      <div class="scroll-hint">SCROLL</div>
+    </div>
+
+    <!-- SECTION THUMBNAILS -->
+    <div class="sections-row">
+      <div class="section-thumb">
+        <div class="section-thumb-label">About</div>
+        <div class="section-thumb-desc">Two-col layout<br>photo + bio text<br>"Survivor log" style</div>
+        <div class="section-vine"></div>
+      </div>
+      <div class="section-thumb">
+        <div class="section-thumb-label">Skills</div>
+        <div class="section-thumb-desc">Tag grid by category<br>GSAP stagger reveal<br>Vine dividers</div>
+        <div class="section-vine"></div>
+      </div>
+      <div class="section-thumb">
+        <div class="section-thumb-label">Projects</div>
+        <div class="section-thumb-desc">Card grid 2-col<br>Glass + moss border<br>Bioluminescent hover</div>
+        <div class="section-vine"></div>
+      </div>
+      <div class="section-thumb">
+        <div class="section-thumb-label">Contact</div>
+        <div class="section-thumb-desc">Centered "signal"<br>GitHub · Email · Phone<br>Icon links + glow</div>
+        <div class="section-vine"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-block annotations">
+  <h2>Design Notes</h2>
+  <p class="sub">Key decisions embedded in this layout</p>
+  <div class="annotation">
+    <span class="ann-tag">GSAP</span>
+    <span class="ann-text">Name glitch effect on load · ScrollTrigger fade-in per section · Vine SVG path draw on scroll</span>
+  </div>
+  <div class="annotation">
+    <span class="ann-tag">FONT</span>
+    <span class="ann-text">Heading: Space Grotesk (bold, geometric) · Body/code: JetBrains Mono · Both free via Google Fonts</span>
+  </div>
+  <div class="annotation">
+    <span class="ann-tag">ROUTING</span>
+    <span class="ann-text">React Router v6 · 5 pages: / /about /skills /projects /contact · Framer Motion page transition</span>
+  </div>
+  <div class="annotation">
+    <span class="ann-tag">FOG</span>
+    <span class="ann-text">CSS radial-gradient overlay · Spore particles: lightweight canvas (50 particles max) · No Three.js</span>
+  </div>
+  <div class="annotation">
+    <span class="ann-tag">MOBILE</span>
+    <span class="ann-text">Navbar collapses → hamburger at &lt;768px · Hero text scales down · Cards single column</span>
+  </div>
+</div>
