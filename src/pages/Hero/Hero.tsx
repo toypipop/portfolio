@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import PageTransition from '../components/PageTransition'
-import SporeCanvas from '../components/SporeCanvas'
-import GlitchText from '../components/GlitchText'
+import PageTransition from '../../components/PageTransition'
+import SporeCanvas from '../../components/SporeCanvas'
+import GlitchText from '../../components/GlitchText'
 import styles from './Hero.module.css'
 
 export default function Hero(): React.JSX.Element {
@@ -9,7 +9,7 @@ export default function Hero(): React.JSX.Element {
     <PageTransition>
       <section className={styles.hero}>
         <div className={styles.content}>
-          <SporeCanvas count={80} maxAlpha={0.85} maxRadius={3} />
+          <SporeCanvas count={80} />
           <div className={styles.contentInner}>
             <p className={styles.eyebrow}>Web Developer · Chiang Mai</p>
             <GlitchText tag="h1" className={styles.name}>PONGYANIN</GlitchText>

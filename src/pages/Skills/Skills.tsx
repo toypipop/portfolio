@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import PageTransition from '../components/PageTransition'
-import VineSVG from '../components/VineSVG'
-import skills from '../data/skills'
+import PageTransition from '../../components/PageTransition'
+import VineSVG from '../../components/VineSVG'
+import skills from '../../data/skills'
 import styles from './Skills.module.css'
 
 gsap.registerPlugin(ScrollTrigger)

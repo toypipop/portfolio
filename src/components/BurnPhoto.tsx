@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import profileImg from '../assets/profile.png'
 import oldProfileImg from '../assets/old_profile.png'
-import styles from '../pages/About.module.css'
+import styles from '../pages/About/About.module.css'
 
 const W = 360
 const H = 480

@@ -1,7 +1,7 @@
 .projects {
   min-height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-ruin);
-  background-image: url('/src/assets/about_bg.png');
+  background-image: url('/src/assets/project_bg.png');
   background-size: cover;
   background-position: center;
   padding: 80px 320px;
@@ -67,6 +67,7 @@
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+  object-position: left top;
   display: block;
 }
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import PageTransition from '../components/PageTransition'
-import VineSVG from '../components/VineSVG'
+import PageTransition from '../../components/PageTransition'
+import VineSVG from '../../components/VineSVG'
 import styles from './Contact.module.css'
 
 const CONTACT_LINKS = [

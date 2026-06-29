@@ -90,7 +90,7 @@
 
 .logCard {
   border: 1px solid var(--color-accent-vine-border);
-  background: rgba(43, 45, 30, 0.85);
+  background: rgba(43, 45, 30, 0.5);
   padding: 28px 32px;
 }
 

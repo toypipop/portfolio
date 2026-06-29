@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route, useLocation, Link } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
-import Hero from './pages/Hero'
-import About from './pages/About'
-import Skills from './pages/Skills'
-import Projects from './pages/Projects'
-import Contact from './pages/Contact'
+import Hero from './pages/Hero/Hero'
+import About from './pages/About/About'
+import Skills from './pages/Skills/Skills'
+import Projects from './pages/Projects/Projects'
+import Contact from './pages/Contact/Contact'
 import './styles/globals.css'
 
 

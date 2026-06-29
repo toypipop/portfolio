@@ -13,20 +13,12 @@ const projects: Project[] = [
     title: 'Payroll System',
     description:
       'Full-stack payroll web application. Manages employee records, salary calculation, and monthly payslip generation.',
-    tags: ['Django', 'React', 'PostgreSQL', 'Docker'],
-    url: null,   // TODO: add live URL
-    image: null, // TODO: add screenshot path e.g. '/projects/payroll.png'
+    tags: ['Go', 'React', 'PostgreSQL', 'Docker'],
+    url: 'https://pay-app-uat.getpipop.org/',
+    image: '/projects/payroll.png'
   },
   {
     id: 'placeholder-1',
-    title: 'Coming Soon',
-    description: 'Project details coming soon.',
-    tags: [],
-    url: null,
-    image: null,
-  },
-  {
-    id: 'placeholder-2',
     title: 'Coming Soon',
     description: 'Project details coming soon.',
     tags: [],

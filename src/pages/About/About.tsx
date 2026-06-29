@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import PageTransition from '../components/PageTransition'
-import VineSVG from '../components/VineSVG'
-import BurnPhoto from '../components/BurnPhoto'
+import PageTransition from '../../components/PageTransition'
+import VineSVG from '../../components/VineSVG'
+import BurnPhoto from '../../components/BurnPhoto'
 import styles from './About.module.css'
 
 export default function About(): React.JSX.Element {
