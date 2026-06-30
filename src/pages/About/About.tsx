@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import VineSVG from '../../components/VineSVG'
 import BurnPhoto from '../../components/BurnPhoto'
 import styles from './About.module.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function About(): React.JSX.Element {
   const leftRef = useRef<HTMLDivElement>(null)
@@ -13,12 +16,18 @@ export default function About(): React.JSX.Element {
       gsap.fromTo(
         leftRef.current,
         { opacity: 0, x: -40 },
-        { opacity: 1, x: 0, duration: 0.7, ease: 'power2.out' }
+        {
+          opacity: 1, x: 0, duration: 0.7, ease: 'power2.out',
+          scrollTrigger: { trigger: leftRef.current, start: 'top 80%' },
+        }
       )
       gsap.fromTo(
         rightRef.current,
         { opacity: 0, x: 40 },
-        { opacity: 1, x: 0, duration: 0.7, ease: 'power2.out', delay: 0.1 }
+        {
+          opacity: 1, x: 0, duration: 0.7, ease: 'power2.out', delay: 0.1,
+          scrollTrigger: { trigger: rightRef.current, start: 'top 80%' },
+        }
       )
     })
     return () => ctx.revert()

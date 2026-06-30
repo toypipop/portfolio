@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import VineSVG from '../../components/VineSVG'
 import styles from './Contact.module.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const CONTACT_LINKS = [
   {
@@ -30,17 +33,14 @@ export default function Contact(): React.JSX.Element {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (!linksRef.current) return
-      const items = linksRef.current.querySelectorAll('a')
+      const items = linksRef.current.querySelectorAll('a, div[class]')
       gsap.fromTo(
         items,
         { opacity: 0, y: 20 },
         {
-          opacity: 1,
-          y: 0,
-          stagger: 0.12,
-          duration: 0.5,
-          ease: 'power2.out',
-          delay: 0.2,
+          opacity: 1, y: 0,
+          stagger: 0.12, duration: 0.5, ease: 'power2.out',
+          scrollTrigger: { trigger: linksRef.current, start: 'top 80%' },
         }
       )
     })
