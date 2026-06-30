@@ -1,5 +1,4 @@
 .contact {
-  scroll-snap-align: start;
   min-height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-main);
   display: flex;

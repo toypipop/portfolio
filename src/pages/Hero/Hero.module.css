@@ -1,5 +1,4 @@
 .hero {
-  scroll-snap-align: start;
   position: relative;
   min-height: calc(100vh - var(--navbar-height));
   display: flex;

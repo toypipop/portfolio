@@ -1,5 +1,4 @@
 .about {
-  scroll-snap-align: start;
   position: relative;
   min-height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-alt);

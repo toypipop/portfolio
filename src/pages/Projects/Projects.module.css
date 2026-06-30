@@ -1,5 +1,4 @@
 .projects {
-  scroll-snap-align: start;
   min-height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-alt);
   padding: 80px 320px;
