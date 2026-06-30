@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import VineSVG from '../../components/VineSVG'
-import BurnPhoto from '../../components/BurnPhoto'
+import profileImg from '../../assets/profile.png'
 import styles from './About.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -35,36 +34,38 @@ export default function About(): React.JSX.Element {
 
   return (
     <section id="about" className={styles.about}>
-        <VineSVG position="top-right" width={160} height={220} opacity={0.4} />
+      <p className={styles.sectionLabel}>About</p>
+      <h2 className={styles.title}>{"Farmer's Journal"}</h2>
 
-        <p className={styles.sectionLabel}>About</p>
-        <h2 className={styles.title}>Survivor Log</h2>
+      <div className={styles.grid}>
+        <div ref={leftRef} className={styles.photoWrapper}>
+          <img
+            src={profileImg}
+            alt="Pongyanin Ausswapipop"
+            className={styles.photo}
+          />
+        </div>
 
-        <div className={styles.grid}>
-          <div ref={leftRef} className={styles.photoWrapper}>
-            <BurnPhoto />
-          </div>
-
-          <div ref={rightRef} className={styles.bio}>
-            <div className={styles.logCard}>
-              <div className={styles.logLabel}>// Field Notes</div>
-              <div className={styles.bioName}>PONGYANIN AUSSWAPIPOP</div>
-              <div className={styles.bioRole}>Backend-focused Web Developer</div>
-              <p className={styles.bioText}>
-                Backend-focused Web Developer with hands-on experience building full-stack
-                applications using Django, Go, React, PostgreSQL, and Docker. Experienced
-                in RESTful API development and modern web application architecture, with
-                personal hands-on practice in CI/CD workflows, VPS deployment, and web
-                infrastructure.
-              </p>
-              <p className={styles.bioText}>
-                Currently at Softnetwork (Dec 2023 – Present), developing and maintaining
-                full-stack web applications using Django and the MVT architecture. Implementing
-                business workflows for loan, hire purchase, and asset management systems.
-              </p>
-            </div>
+        <div ref={rightRef} className={styles.bio}>
+          <div className={styles.logCard}>
+            <div className={styles.logLabel}>// Journal Entry</div>
+            <div className={styles.bioName}>PONGYANIN AUSSWAPIPOP</div>
+            <div className={styles.bioRole}>Backend-focused Web Developer</div>
+            <p className={styles.bioText}>
+              Backend-focused Web Developer with hands-on experience building full-stack
+              applications using Django, Go, React, PostgreSQL, and Docker. Experienced
+              in RESTful API development and modern web application architecture, with
+              personal hands-on practice in CI/CD workflows, VPS deployment, and web
+              infrastructure.
+            </p>
+            <p className={styles.bioText}>
+              Currently at Softnetwork (Dec 2023 – Present), developing and maintaining
+              full-stack web applications using Django and the MVT architecture. Implementing
+              business workflows for loan, hire purchase, and asset management systems.
+            </p>
           </div>
         </div>
+      </div>
     </section>
   )
 }

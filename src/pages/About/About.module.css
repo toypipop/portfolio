@@ -1,53 +1,35 @@
 .about {
   scroll-snap-align: start;
   position: relative;
-  overflow: hidden;
   min-height: calc(100vh - var(--navbar-height));
-  background-color: var(--color-bg-ruin);
-  background-image: url('/src/assets/about_bg.png');
-  background-size: cover;
-  background-position: center;
+  background-color: var(--color-bg-alt);
   padding: 80px 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.about::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--color-hero-overlay);
-  z-index: 0;
-}
-
 .sectionLabel {
-  position: relative;
-  z-index: 1;
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-accent-bio);
+  font-size: 20px;
+  color: var(--color-accent-green);
   letter-spacing: 5px;
   text-transform: uppercase;
   margin-bottom: 12px;
 }
 
-.sectionLabel::before { content: '// '; opacity: 0.5; }
+.sectionLabel::before { content: '// '; opacity: 0.6; }
 
 .title {
-  position: relative;
-  z-index: 1;
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 900;
-  color: var(--color-text-bleached);
+  font-size: clamp(18px, 3vw, 32px);
+  font-weight: 400;
+  color: var(--color-text-primary);
   text-transform: uppercase;
   margin-bottom: 48px;
 }
 
 .grid {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 60px;
@@ -62,25 +44,8 @@
   width: 100%;
   aspect-ratio: 3/4;
   object-fit: cover;
-  border: 1px solid var(--color-accent-vine);
-  box-shadow: 0 0 40px var(--color-accent-vine-glow);
   display: block;
-}
-
-.photoPlaceholder {
-  width: 100%;
-  aspect-ratio: 3/4;
-  background: var(--color-bg-overgrown);
-  border: 1px solid var(--color-accent-vine);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-text-dust);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  box-shadow: 0 0 40px var(--color-accent-vine-glow);
+  border: 3px solid var(--color-border-wood);
 }
 
 .bio {
@@ -90,68 +55,49 @@
 }
 
 .logCard {
-  border: 1px solid var(--color-accent-vine-border);
-  background: rgba(43, 45, 30, 0.5);
+  border: 3px solid var(--color-border-wood);
+  background: var(--color-card-bg);
   padding: 28px 32px;
 }
 
 .logLabel {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-accent-vine);
-  letter-spacing: 4px;
+  font-size: 18px;
+  color: var(--color-accent-green);
+  letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 16px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .bioName {
   font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--color-text-bleached);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-primary);
   letter-spacing: 2px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  line-height: 1.6;
 }
 
 .bioRole {
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-accent-bio);
-  letter-spacing: 3px;
+  font-size: 18px;
+  color: var(--color-accent-gold);
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
 .bioText {
-  font-size: 13px;
-  color: var(--color-text-dust-light);
-  line-height: 1.9;
-  margin-bottom: 20px;
-}
-
-.coords {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-text-dust);
-  letter-spacing: 2px;
-  border-top: 1px solid var(--color-accent-vine-glow);
-  padding-top: 16px;
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
 }
-
-.coords span { color: var(--color-accent-bio); }
 
 @media (max-width: 768px) {
-  .about {
-    padding: 48px 96px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .photoPlaceholder {
-    aspect-ratio: 1/1;
-  }
+  .about { padding: 48px 32px; }
+  .grid { grid-template-columns: 1fr; gap: 32px; }
 }
