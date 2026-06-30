@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import VineSVG from '../../components/VineSVG'
 import projects from '../../data/projects'
 import type { Project } from '../../data/projects'
 import styles from './Projects.module.css'
@@ -71,16 +70,14 @@ export default function Projects(): React.JSX.Element {
 
   return (
     <section id="projects" className={styles.projects}>
-        <VineSVG position="top-left" width={140} height={200} opacity={0.4} />
+      <p className={styles.sectionLabel}>Projects</p>
+      <h2 className={styles.title}>Harvest</h2>
 
-        <p className={styles.sectionLabel}>Projects</p>
-        <h2 className={styles.title}>Field Work</h2>
-
-        <div ref={gridRef} className={styles.grid}>
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+      <div ref={gridRef} className={styles.grid}>
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
     </section>
   )
 }

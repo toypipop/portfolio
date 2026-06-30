@@ -1,67 +1,54 @@
 .projects {
   scroll-snap-align: start;
   min-height: calc(100vh - var(--navbar-height));
-  background-color: var(--color-bg-ruin);
-  background-image: url('/src/assets/project_bg.png');
-  background-size: cover;
-  background-position: center;
+  background-color: var(--color-bg-alt);
   padding: 80px 320px;
   position: relative;
   overflow: hidden;
 }
 
-.projects::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--color-hero-overlay);
-  z-index: 0;
-}
-
-.sectionLabel,
-.title,
-.grid {
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--color-accent-green);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
   position: relative;
   z-index: 1;
 }
 
-.sectionLabel {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-accent-bio);
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.sectionLabel::before { content: '// '; opacity: 0.5; }
+.sectionLabel::before { content: '// '; opacity: 0.6; }
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 900;
-  color: var(--color-text-bleached);
+  font-size: clamp(18px, 3vw, 32px);
+  font-weight: 400;
+  color: var(--color-text-primary);
   text-transform: uppercase;
   margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  position: relative;
+  z-index: 1;
 }
 
 .card {
-  border: 1px solid var(--color-accent-vine-border);
-  background: var(--color-bg-overgrown-card-dim);
-  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  border: 3px solid var(--color-border-wood);
+  background: var(--color-card-bg);
+  transition: border-color 200ms ease, transform 200ms ease;
   overflow: hidden;
 }
 
 .card:hover {
-  border-color: var(--color-accent-bio);
+  border-color: var(--color-accent-gold);
   transform: scale(1.02);
-  box-shadow: 0 0 24px var(--color-accent-bio-glow-dim);
 }
 
 .cardImage {
@@ -75,16 +62,16 @@
 .cardImagePlaceholder {
   width: 100%;
   aspect-ratio: 16/9;
-  background: var(--color-bg-overgrown);
+  background: var(--color-bg-main);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-text-dust);
-  letter-spacing: 3px;
+  font-size: 18px;
+  color: var(--color-text-muted);
+  letter-spacing: 2px;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--color-accent-vine-glow);
+  border-bottom: 2px solid var(--color-border-wood-light);
 }
 
 .cardBody {
@@ -93,15 +80,17 @@
 
 .cardTitle {
   font-family: var(--font-heading);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-text-bleached);
-  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+  line-height: 1.6;
 }
 
 .cardDesc {
-  font-size: 13px;
-  color: var(--color-text-dust);
+  font-family: var(--font-mono);
+  font-size: 18px;
+  color: var(--color-text-secondary);
   line-height: 1.8;
   margin-bottom: 16px;
 }
@@ -115,11 +104,11 @@
 
 .tag {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-text-bleached);
-  background: var(--color-accent-vine-bg);
-  border: 1px solid var(--color-accent-vine);
-  padding: 4px 12px;
+  font-size: 16px;
+  color: var(--color-text-primary);
+  background: rgba(139, 94, 44, 0.15);
+  border: 2px solid var(--color-border-wood);
+  padding: 3px 10px;
   letter-spacing: 1px;
 }
 
@@ -128,8 +117,8 @@
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-accent-bio);
+  font-size: 18px;
+  color: var(--color-accent-gold);
   letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
@@ -140,19 +129,13 @@
 
 .cardLinkDisabled {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-text-dust);
+  font-size: 16px;
+  color: var(--color-text-muted);
   letter-spacing: 2px;
   text-transform: uppercase;
-  opacity: 0.4;
 }
 
 @media (max-width: 768px) {
-  .projects {
-    padding: 48px 96px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
+  .projects { padding: 48px 32px; }
+  .grid { grid-template-columns: 1fr; }
 }
