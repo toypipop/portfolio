@@ -56,8 +56,8 @@
 
 .slot {
   position: relative;
-  width: 52px;
-  height: 58px;
+  width: 62px;
+  height: 68px;
   background: var(--color-bg-main);
   border: 1px solid var(--color-border-wood);
   display: flex;
@@ -143,6 +143,6 @@
 
 @media (max-width: 768px) {
   .skills { padding: 20px 16px; }
-  .slot { width: 44px; height: 50px; }
+  .slot { width: 52px; height: 58px; }
   .slotIcon { font-size: 14px; }
 }
