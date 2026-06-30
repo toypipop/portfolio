@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import PageTransition from '../../components/PageTransition'
 import VineSVG from '../../components/VineSVG'
 import skills from '../../data/skills'
 import styles from './Skills.module.css'
@@ -37,8 +36,7 @@ export default function Skills(): React.JSX.Element {
   }, [])
 
   return (
-    <PageTransition>
-      <section className={styles.skills}>
+    <section id="skills" className={styles.skills}>
         <VineSVG position="bottom-right" width={140} height={200} opacity={0.35} />
 
         <p className={styles.sectionLabel}>Skills</p>
@@ -59,7 +57,6 @@ export default function Skills(): React.JSX.Element {
             </div>
           </div>
         ))}
-      </section>
-    </PageTransition>
+    </section>
   )
 }

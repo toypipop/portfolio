@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import PageTransition from '../../components/PageTransition'
 import VineSVG from '../../components/VineSVG'
 import projects from '../../data/projects'
 import type { Project } from '../../data/projects'
@@ -71,8 +70,7 @@ export default function Projects(): React.JSX.Element {
   }, [])
 
   return (
-    <PageTransition>
-      <section className={styles.projects}>
+    <section id="projects" className={styles.projects}>
         <VineSVG position="top-left" width={140} height={200} opacity={0.4} />
 
         <p className={styles.sectionLabel}>Projects</p>
@@ -83,7 +81,6 @@ export default function Projects(): React.JSX.Element {
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
-      </section>
-    </PageTransition>
+    </section>
   )
 }

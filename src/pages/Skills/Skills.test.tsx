@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
 import Skills from './Skills'
 
 test('renders all skill categories', () => {
-  render(<MemoryRouter><Skills /></MemoryRouter>)
+  render(<Skills />)
   expect(screen.getByText('Backend')).toBeInTheDocument()
   expect(screen.getByText('Frontend')).toBeInTheDocument()
   expect(screen.getByText('Database')).toBeInTheDocument()

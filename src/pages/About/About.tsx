@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import PageTransition from '../../components/PageTransition'
 import VineSVG from '../../components/VineSVG'
 import BurnPhoto from '../../components/BurnPhoto'
 import styles from './About.module.css'
@@ -26,8 +25,7 @@ export default function About(): React.JSX.Element {
   }, [])
 
   return (
-    <PageTransition>
-      <section className={styles.about}>
+    <section id="about" className={styles.about}>
         <VineSVG position="top-right" width={160} height={220} opacity={0.4} />
 
         <p className={styles.sectionLabel}>About</p>
@@ -58,7 +56,6 @@ export default function About(): React.JSX.Element {
             </div>
           </div>
         </div>
-      </section>
-    </PageTransition>
+    </section>
   )
 }

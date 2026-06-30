@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
 import Contact from './Contact'
 
 test('renders contact page with links', () => {
-  render(<MemoryRouter><Contact /></MemoryRouter>)
+  render(<Contact />)
   expect(screen.getByText('Contact')).toBeInTheDocument()
   expect(screen.getByText('GitHub')).toBeInTheDocument()
   expect(screen.getByText('Email')).toBeInTheDocument()

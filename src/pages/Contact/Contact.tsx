@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import PageTransition from '../../components/PageTransition'
 import VineSVG from '../../components/VineSVG'
 import styles from './Contact.module.css'
 
@@ -49,8 +48,7 @@ export default function Contact(): React.JSX.Element {
   }, [])
 
   return (
-    <PageTransition>
-      <section className={styles.contact}>
+    <section id="contact" className={styles.contact}>
         <VineSVG position="top-right" width={140} height={200} opacity={0.4} />
         <VineSVG position="bottom-left" width={120} height={160} opacity={0.35} />
 
@@ -91,7 +89,6 @@ export default function Contact(): React.JSX.Element {
         <div className={styles.footer}>
           © {new Date().getFullYear()} Pongyanin Ausswapipop
         </div>
-      </section>
-    </PageTransition>
+    </section>
   )
 }
