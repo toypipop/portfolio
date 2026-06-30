@@ -30,8 +30,6 @@ const skills: SkillGroup[] = [
       { name: 'HTML', icon: '📄', level: 3 },
       { name: 'CSS', icon: '🎨', level: 2 },
       { name: 'Vite', icon: '⚡', level: 2 },
-      { name: 'Axios', icon: '📡', level: 2 },
-      { name: 'SPA Routing', icon: '🗺', level: 2 },
     ],
   },
   {
@@ -49,17 +47,11 @@ const skills: SkillGroup[] = [
     category: 'DevOps',
     items: [
       { name: 'Docker', icon: '🐳', level: 2 },
-      { name: 'Compose', icon: '🔧', level: 2 },
       { name: 'Nginx', icon: '🌐', level: 2 },
-      { name: 'Caddy', icon: '🔒', level: 1 },
       { name: 'GH Actions', icon: '🤖', level: 2 },
       { name: 'Linux', icon: '🐧', level: 2 },
       { name: 'VPS Deploy', icon: '☁', level: 2 },
       { name: 'AWS EC2', icon: '🖥', level: 2 },
-      { name: 'AWS IAM', icon: '🔑', level: 1 },
-      { name: 'AWS VPC', icon: '🕸', level: 1 },
-      { name: 'AWS ECR', icon: '📦', level: 1 },
-      { name: 'Rev. Proxy', icon: '🔀', level: 2 },
     ],
   },
   {
