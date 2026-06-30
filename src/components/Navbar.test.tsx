@@ -14,6 +14,7 @@ test('nav links have correct href attributes', () => {
   render(<Navbar />)
   const links = screen.getAllByRole('link')
   const hrefs = links.map((l) => l.getAttribute('href'))
+  expect(hrefs).toContain('#hero')
   expect(hrefs).toContain('#about')
   expect(hrefs).toContain('#skills')
   expect(hrefs).toContain('#projects')
