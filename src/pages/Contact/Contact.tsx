@@ -33,7 +33,7 @@ export default function Contact(): React.JSX.Element {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (!linksRef.current) return
-      const items = linksRef.current.querySelectorAll('a, div[class]')
+      const items = linksRef.current.querySelectorAll(':scope > *')
       gsap.fromTo(
         items,
         { opacity: 0, y: 20 },

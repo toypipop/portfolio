@@ -17,11 +17,12 @@ export default function Navbar(): React.JSX.Element {
     const sections = document.querySelectorAll<HTMLElement>('section[id]')
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
-          }
-        })
+        const visible = entries.filter((e) => e.isIntersecting)
+        if (visible.length === 0) return
+        const topmost = visible.reduce((a, b) =>
+          a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+        )
+        setActiveId(topmost.target.id)
       },
       { rootMargin: '0px 0px -60% 0px', threshold: 0 }
     )
