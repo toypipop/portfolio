@@ -3,22 +3,8 @@ services:
     build: .
     restart: unless-stopped
     networks:
-      - web
-
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx/portfolio.conf:/etc/nginx/conf.d/portfolio.conf:ro
-      - /etc/letsencrypt:/etc/letsencrypt:ro
-    depends_on:
-      - portfolio
-    restart: unless-stopped
-    networks:
-      - web
+      - infra_default
 
 networks:
-  web:
-    driver: bridge
+  infra_default:
+    external: true
