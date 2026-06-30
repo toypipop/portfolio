@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import VineSVG from '../../components/VineSVG'
 import skills from '../../data/skills'
 import styles from './Skills.module.css'
 
@@ -47,10 +46,8 @@ export default function Skills(): React.JSX.Element {
 
   return (
     <section id="skills" className={styles.skills}>
-      <VineSVG position="bottom-right" width={140} height={200} opacity={0.35} />
-
       <p className={styles.sectionLabel}>Skills</p>
-      <h2 className={styles.title}>Arsenal</h2>
+      <h2 className={styles.title}>Inventory</h2>
 
       {skills.map((group, i) => (
         <div
