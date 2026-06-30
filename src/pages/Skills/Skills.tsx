@@ -7,7 +7,6 @@ import styles from './Skills.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const SLOT_COLS = 10
 
 function Pips({ level }: { level: 1 | 2 | 3 }): React.JSX.Element {
   return (
@@ -71,9 +70,6 @@ export default function Skills(): React.JSX.Element {
 
       <div className={styles.inventory}>
         {skills.map((group) => {
-          const remainder = group.items.length % SLOT_COLS
-          const emptyCount = remainder === 0 ? 0 : SLOT_COLS - remainder
-
           return (
             <div key={group.category} className={styles.bag}>
               <div className={styles.bagHeader}>{group.category}</div>
@@ -81,8 +77,8 @@ export default function Skills(): React.JSX.Element {
                 {group.items.map((skill) => (
                   <ItemSlot key={skill.name} skill={skill} />
                 ))}
-                {Array.from({ length: emptyCount }).map((_, i) => (
-                  <EmptySlot key={`empty-${i}`} />
+                {Array.from({ length: 20 }).map((_, i) => (
+                  <EmptySlot key={i} />
                 ))}
               </div>
             </div>

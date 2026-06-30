@@ -49,8 +49,8 @@
 }
 
 .slotGrid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 62px);
   gap: 4px;
 }
 
