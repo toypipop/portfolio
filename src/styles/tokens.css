@@ -1,32 +1,32 @@
 :root {
-  --color-bg-ruin: #1a1a14;
-  --color-bg-overgrown: #2b2d1e;
-  --color-text-bleached: #d4c9a8;
-  --color-text-dust: #b5a07a;
-  --color-text-dust-light: #c4b898;
-  --color-accent-bio: #5a8c7a;
-  --color-accent-vine: #4a6741;
-  --color-danger-rust: #a85c3a;
-  --color-accent-bio-glow: rgba(90, 140, 122, 0.5);
-  --color-bg-ruin-overlay: rgba(26, 26, 20, 0.98);
-  --color-bg-ruin-nav: rgba(26, 26, 20, 0.95);
-  --color-hero-overlay: rgba(26, 26, 20, 0.65);
-  --color-accent-bio-shadow: rgba(90, 140, 122, 0.2);
-  --color-accent-bio-shadow-hover: rgba(90, 140, 122, 0.4);
-  --color-accent-bio-bg-hover: rgba(90, 140, 122, 0.1);
-  --color-bleached-border: rgba(212, 201, 168, 0.3);
-  --color-bleached-border-hover: rgba(212, 201, 168, 0.6);
-  --color-bleached-muted: rgba(212, 201, 168, 0.35);
-  --color-accent-vine-glow: rgba(74, 103, 65, 0.2);
-  --color-accent-vine-border: rgba(74, 103, 65, 0.3);
-  --color-accent-vine-bg: rgba(74, 103, 65, 0.1);
-  --color-bg-overgrown-card: rgba(43, 45, 30, 0.4);
-  --color-bg-overgrown-card-dim: rgba(43, 45, 30, 0.3);
-  --color-accent-bio-glow-dim: rgba(90, 140, 122, 0.15);
-  --color-text-dust-faded: rgba(181, 160, 122, 0.25);
+  /* Backgrounds */
+  --color-bg-main: #1c1208;
+  --color-bg-alt: #0e1a08;
+  --color-bg-nav: rgba(28, 18, 8, 0.96);
+  --color-bg-overlay: rgba(14, 26, 8, 0.98);
+  --color-card-bg: rgba(43, 29, 14, 0.7);
 
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  /* Text */
+  --color-text-primary: #f5e6b4;
+  --color-text-secondary: #c9a96e;
+  --color-text-muted: rgba(201, 169, 110, 0.5);
+
+  /* Accents */
+  --color-accent-gold: #f0c040;
+  --color-accent-green: #6aaa38;
+  --color-accent-coral: #e87a5a;
+
+  /* Borders */
+  --color-border-wood: #8b5e2c;
+  --color-border-wood-light: rgba(139, 94, 44, 0.4);
+
+  /* Warm glow */
+  --color-gold-glow: rgba(240, 192, 64, 0.25);
+  --color-gold-shadow: rgba(240, 192, 64, 0.15);
+
+  /* Fonts */
+  --font-heading: 'Press Start 2P', cursive;
+  --font-mono: 'VT323', monospace;
 
   --navbar-height: 60px;
 }

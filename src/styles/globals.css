@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-color: var(--color-bg-overgrown);
+  background-color: var(--color-bg-main);
   color: var(--color-text-dust-light);
   font-family: var(--font-mono);
   min-height: 100vh;
