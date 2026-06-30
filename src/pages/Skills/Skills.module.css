@@ -1,13 +1,13 @@
 .skills {
   scroll-snap-align: start;
-  min-height: calc(100vh - var(--navbar-height));
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
   background-color: var(--color-bg-overgrown);
   background-image: url('/src/assets/about_bg.png');
   background-size: cover;
   background-position: center;
   padding: 80px 320px;
   position: relative;
-  overflow: hidden;
 }
 
 .skills::before {
