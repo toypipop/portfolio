@@ -7,6 +7,16 @@ import styles from './Skills.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
+function Pips({ level }: { level: 1 | 2 | 3 }): React.JSX.Element {
+  return (
+    <span className={styles.pips} aria-label={`Level ${level} of 3`}>
+      {([1, 2, 3] as const).map((n) => (
+        <span key={n} className={n <= level ? styles.pipFilled : styles.pipEmpty}>◆</span>
+      ))}
+    </span>
+  )
+}
+
 export default function Skills(): React.JSX.Element {
   const groupRefs = useRef<(HTMLDivElement | null)[]>([])
 
@@ -14,9 +24,9 @@ export default function Skills(): React.JSX.Element {
     const ctx = gsap.context(() => {
       groupRefs.current.forEach((group) => {
         if (!group) return
-        const tags = group.querySelectorAll(`.${styles.tag}`)
+        const rows = group.querySelectorAll(`.${styles.skillRow}`)
         gsap.fromTo(
-          tags,
+          rows,
           { opacity: 0, y: 12 },
           {
             opacity: 1,
@@ -37,26 +47,29 @@ export default function Skills(): React.JSX.Element {
 
   return (
     <section id="skills" className={styles.skills}>
-        <VineSVG position="bottom-right" width={140} height={200} opacity={0.35} />
+      <VineSVG position="bottom-right" width={140} height={200} opacity={0.35} />
 
-        <p className={styles.sectionLabel}>Skills</p>
-        <h2 className={styles.title}>Arsenal</h2>
+      <p className={styles.sectionLabel}>Skills</p>
+      <h2 className={styles.title}>Arsenal</h2>
 
-        {skills.map((group, i) => (
-          <div
-            key={group.category}
-            className={styles.group}
-            ref={(el) => { groupRefs.current[i] = el }}
-          >
-            <div className={styles.groupHeader}>{group.category}</div>
-            <div className={styles.vineDivider} />
-            <div className={styles.tags}>
-              {group.items.map((item) => (
-                <span key={item} className={styles.tag}>{item}</span>
-              ))}
-            </div>
+      {skills.map((group, i) => (
+        <div
+          key={group.category}
+          className={styles.group}
+          ref={(el) => { groupRefs.current[i] = el }}
+        >
+          <div className={styles.groupHeader}>{group.category}</div>
+          <div className={styles.vineDivider} />
+          <div className={styles.skillList}>
+            {group.items.map((skill) => (
+              <div key={skill.name} className={styles.skillRow}>
+                <span className={styles.skillName}>{skill.name}</span>
+                <Pips level={skill.level} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+      ))}
     </section>
   )
 }

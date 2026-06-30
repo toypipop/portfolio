@@ -65,26 +65,42 @@
   margin-bottom: 20px;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.skillList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px 40px;
 }
 
-.tag {
+.skillRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-accent-vine-border);
+}
+
+.skillName {
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--color-text-bleached);
-  background: var(--color-accent-vine-bg);
-  border: 1px solid var(--color-accent-vine);
-  padding: 6px 16px;
   letter-spacing: 1px;
-  transition: background 200ms ease, border-color 200ms ease;
 }
 
-.tag:hover {
-  background: var(--color-accent-vine-glow);
-  border-color: var(--color-accent-bio);
+.pips {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.pipFilled {
+  font-size: 10px;
+  color: var(--color-accent-bio);
+  text-shadow: 0 0 6px var(--color-accent-bio-glow);
+}
+
+.pipEmpty {
+  font-size: 10px;
+  color: var(--color-accent-vine-border);
 }
 
 @media (max-width: 768px) {
