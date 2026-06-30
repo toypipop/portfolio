@@ -2,7 +2,7 @@
   position: relative;
   min-height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-alt);
-  padding: 80px 320px;
+  padding: 48px 160px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,28 +10,28 @@
 
 .sectionLabel {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 16px;
   color: var(--color-accent-green);
   letter-spacing: 5px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .sectionLabel::before { content: '// '; opacity: 0.6; }
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(18px, 3vw, 32px);
+  font-size: clamp(14px, 2vw, 24px);
   font-weight: 400;
   color: var(--color-text-primary);
   text-transform: uppercase;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 60px;
+  gap: 40px;
   align-items: start;
 }
 
@@ -50,53 +50,53 @@
 .bio {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .logCard {
   border: 3px solid var(--color-border-wood);
   background: var(--color-card-bg);
-  padding: 28px 32px;
+  padding: 20px 24px;
 }
 
 .logLabel {
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-accent-green);
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   opacity: 0.9;
 }
 
 .bioName {
   font-family: var(--font-heading);
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 400;
   color: var(--color-text-primary);
   letter-spacing: 2px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   line-height: 1.6;
 }
 
 .bioRole {
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-accent-gold);
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .bioText {
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-text-secondary);
-  line-height: 1.8;
-  margin-bottom: 16px;
+  line-height: 1.7;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
-  .about { padding: 48px 32px; }
-  .grid { grid-template-columns: 1fr; gap: 32px; }
+  .about { padding: 36px 24px; }
+  .grid { grid-template-columns: 1fr; gap: 24px; }
 }

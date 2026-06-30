@@ -1,18 +1,18 @@
 .projects {
   min-height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-alt);
-  padding: 80px 320px;
+  padding: 48px 160px;
   position: relative;
   overflow: hidden;
 }
 
 .sectionLabel {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 16px;
   color: var(--color-accent-green);
   letter-spacing: 5px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   position: relative;
   z-index: 1;
 }
@@ -21,11 +21,11 @@
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(18px, 3vw, 32px);
+  font-size: clamp(14px, 2vw, 24px);
   font-weight: 400;
   color: var(--color-text-primary);
   text-transform: uppercase;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
   position: relative;
   z-index: 1;
 }
@@ -33,7 +33,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 20px;
   position: relative;
   z-index: 1;
 }
@@ -66,7 +66,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-text-muted);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -74,40 +74,40 @@
 }
 
 .cardBody {
-  padding: 24px;
+  padding: 16px;
 }
 
 .cardTitle {
   font-family: var(--font-heading);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
   color: var(--color-text-primary);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1.6;
 }
 
 .cardDesc {
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-text-secondary);
-  line-height: 1.8;
-  margin-bottom: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
 .cardTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 14px;
 }
 
 .tag {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 14px;
   color: var(--color-text-primary);
   background: rgba(139, 94, 44, 0.15);
   border: 2px solid var(--color-border-wood);
-  padding: 3px 10px;
+  padding: 2px 8px;
   letter-spacing: 1px;
 }
 
@@ -116,7 +116,7 @@
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-accent-gold);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -128,13 +128,13 @@
 
 .cardLinkDisabled {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 14px;
   color: var(--color-text-muted);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
-  .projects { padding: 48px 32px; }
+  .projects { padding: 36px 24px; }
   .grid { grid-template-columns: 1fr; }
 }
