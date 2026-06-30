@@ -1,4 +1,5 @@
 .about {
+  scroll-snap-align: start;
   position: relative;
   overflow: hidden;
   min-height: calc(100vh - var(--navbar-height));

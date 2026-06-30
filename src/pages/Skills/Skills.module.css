@@ -1,4 +1,5 @@
 .skills {
+  scroll-snap-align: start;
   min-height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-overgrown);
   background-image: url('/src/assets/about_bg.png');

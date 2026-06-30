@@ -9,6 +9,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--navbar-height);
+  scroll-snap-type: y proximity;
 }
 
 body {
