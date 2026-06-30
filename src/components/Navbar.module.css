@@ -9,24 +9,23 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
-  background: var(--color-bg-ruin-nav);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--color-accent-vine);
+  background: var(--color-bg-nav);
+  backdrop-filter: blur(4px);
+  border-bottom: 3px solid var(--color-border-wood);
 }
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--color-text-bleached);
-  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  letter-spacing: 3px;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .logo span {
-  color: var(--color-accent-bio);
-  text-shadow: 0 0 8px var(--color-accent-bio-glow);
+  color: var(--color-accent-gold);
 }
 
 .links {
@@ -37,23 +36,23 @@
 
 .link {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--color-text-dust);
+  color: var(--color-text-secondary);
   text-decoration: none;
   transition: color 150ms ease;
   padding-bottom: 2px;
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 .link:hover {
-  color: var(--color-text-bleached);
+  color: var(--color-text-primary);
 }
 
 .link.active {
-  color: var(--color-accent-bio);
-  border-bottom-color: var(--color-accent-bio);
+  color: var(--color-accent-gold);
+  border-bottom-color: var(--color-accent-gold);
 }
 
 /* Hamburger — hidden on desktop */
@@ -71,7 +70,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--color-text-bleached);
+  background: var(--color-text-primary);
   transition: transform 200ms ease, opacity 200ms ease;
 }
 
@@ -80,7 +79,7 @@
   display: none;
   position: fixed;
   inset: 0;
-  background: var(--color-bg-ruin-overlay);
+  background: var(--color-bg-overlay);
   z-index: 99;
   flex-direction: column;
   align-items: center;
@@ -94,24 +93,19 @@
 
 .overlayLink {
   font-family: var(--font-heading);
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--color-text-bleached);
+  color: var(--color-text-primary);
   text-decoration: none;
 }
 
 .overlayLink.active {
-  color: var(--color-accent-bio);
+  color: var(--color-accent-gold);
 }
 
 @media (max-width: 768px) {
-  .links {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
+  .links { display: none; }
+  .hamburger { display: flex; }
 }
