@@ -20,9 +20,9 @@ function Pips({ level }: { level: 1 | 2 | 3 }): React.JSX.Element {
 }
 
 const LEVEL_CLASS: Record<1 | 2 | 3, string> = {
-  1: styles.slotBronze,
-  2: styles.slotSilver,
-  3: styles.slotGold,
+  1: styles.slotSilver,
+  2: styles.slotGold,
+  3: styles.slotRainbow,
 }
 
 function ItemSlot({ skill }: { skill: Skill }): React.JSX.Element {

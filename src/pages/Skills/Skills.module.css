@@ -69,9 +69,15 @@
   transition: opacity 150ms ease, background 150ms ease;
 }
 
-.slotBronze { border-color: #cd7f32; }
 .slotSilver { border-color: #94a3b8; }
 .slotGold   { border-color: #f0c040; box-shadow: 0 0 6px rgba(240,192,64,0.2); }
+.slotRainbow {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--color-bg-main), var(--color-bg-main)) padding-box,
+    linear-gradient(135deg, #f87171, #fb923c, #facc15, #4ade80, #38bdf8, #818cf8, #e879f9) border-box;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.2);
+}
 
 .slot:not(.slotEmpty):hover {
   background: rgba(56, 189, 248, 0.06);
