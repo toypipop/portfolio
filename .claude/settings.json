@@ -53,10 +53,12 @@
       "Bash(bash \"C:/Users/Toypipop/.claude/plugins/cache/claude-plugins-official/superpowers/6.0.3/skills/subagent-driven-development/scripts/review-package\" 347761a 1aa989c)",
       "Read(//c/Users/Toypipop/.claude/plugins/cache/claude-plugins-official/superpowers/6.0.3/skills/requesting-code-review/**)",
       "WebSearch",
-      "mcp__claude_ai_Claude_Code_Remote__add_repo"
+      "mcp__claude_ai_Claude_Code_Remote__add_repo",
+      "Bash(mkdir -p \"c:/Users/toypipop/portfolio/.github/workflows\")"
     ],
     "additionalDirectories": [
-      "c:\\Users\\toypipop\\portfolio\\temp-react"
+      "c:\\Users\\toypipop\\portfolio\\temp-react",
+      "c:\\Users\\toypipop\\portfolio\\.github"
     ]
   }
 }
