@@ -1,10 +1,7 @@
 .contact {
   scroll-snap-align: start;
   min-height: calc(100vh - var(--navbar-height));
-  background-color: var(--color-bg-overgrown);
-  background-image: url('/src/assets/contact_bg.png');
-  background-size: cover;
-  background-position: center;
+  background-color: var(--color-bg-main);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,46 +12,29 @@
   overflow: hidden;
 }
 
-.contact::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--color-hero-overlay);
-  z-index: 0;
-}
-
-.signal,
-.title,
-.subtitle,
-.links,
-.footer {
-  position: relative;
-  z-index: 1;
-}
-
 .signal {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-accent-bio);
-  letter-spacing: 6px;
+  font-size: 20px;
+  color: var(--color-accent-green);
+  letter-spacing: 5px;
   text-transform: uppercase;
   margin-bottom: 16px;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 5vw, 56px);
-  font-weight: 900;
-  color: var(--color-text-bleached);
+  font-size: clamp(18px, 3vw, 32px);
+  font-weight: 400;
+  color: var(--color-text-primary);
   text-transform: uppercase;
   margin-bottom: 12px;
 }
 
 .subtitle {
   font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--color-text-dust);
+  font-size: 20px;
+  color: var(--color-text-secondary);
   margin-bottom: 60px;
   max-width: 360px;
   line-height: 1.8;
@@ -63,9 +43,9 @@
 .links {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
   width: 100%;
-  max-width: 340px;
+  max-width: 380px;
 }
 
 .link {
@@ -73,22 +53,21 @@
   align-items: center;
   gap: 16px;
   padding: 18px 24px;
-  border: 1px solid var(--color-accent-vine-border);
-  background: var(--color-bg-overgrown-card-dim);
+  border: 3px solid var(--color-border-wood);
+  background: var(--color-card-bg);
   text-decoration: none;
-  transition: border-color 200ms ease, box-shadow 200ms ease, background 200ms ease;
+  transition: border-color 200ms ease, background 200ms ease;
 }
 
 .link:hover {
-  border-color: var(--color-accent-bio);
-  background: var(--color-bg-overgrown-card);
-  box-shadow: 0 0 20px var(--color-accent-bio-glow-dim);
+  border-color: var(--color-accent-gold);
+  background: rgba(240, 192, 64, 0.05);
 }
 
 .linkIcon {
-  font-size: 18px;
-  color: var(--color-accent-bio);
-  width: 24px;
+  font-size: 20px;
+  color: var(--color-accent-gold);
+  width: 28px;
   text-align: center;
   flex-shrink: 0;
 }
@@ -99,17 +78,17 @@
 
 .linkLabel {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-accent-vine);
-  letter-spacing: 3px;
+  font-size: 16px;
+  color: var(--color-accent-green);
+  letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 2px;
 }
 
 .linkValue {
   font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--color-text-bleached);
+  font-size: 18px;
+  color: var(--color-text-primary);
   letter-spacing: 1px;
 }
 
@@ -123,8 +102,8 @@
   position: absolute;
   bottom: 24px;
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-text-dust-faded);
+  font-size: 16px;
+  color: var(--color-text-muted);
   letter-spacing: 3px;
   text-transform: uppercase;
 }
