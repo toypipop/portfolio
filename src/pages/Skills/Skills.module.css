@@ -2,7 +2,7 @@
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
   background-color: var(--color-bg-main);
-  padding: 32px 120px;
+  padding: 28px 48px;
   position: relative;
 }
 
@@ -12,83 +12,106 @@
   color: var(--color-accent-green);
   letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 6px;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 4px;
 }
 
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(24px, 3vw, 40px);
+  font-size: clamp(20px, 2.5vw, 32px);
   font-weight: 600;
   color: var(--color-text-primary);
   text-transform: uppercase;
   letter-spacing: -0.5px;
-  margin-bottom: 24px;
-  position: relative;
-  z-index: 1;
-}
-
-.group {
   margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
 }
 
-.groupHeader {
+.inventory {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bag {
+  background: rgba(14, 20, 38, 0.5);
+  border: 1px solid var(--color-border-wood);
+  padding: 12px 14px;
+}
+
+.bagHeader {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--color-accent-gold);
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.vineDivider {
-  width: 100%;
-  height: 1px;
-  background: var(--color-border-wood-light);
-  margin-bottom: 8px;
-}
-
-.skillList {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0 32px;
-}
-
-.skillRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 0;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
   border-bottom: 1px solid var(--color-border-wood-light);
 }
 
-.skillName {
+.slotGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.slot {
+  aspect-ratio: 1;
+  background: var(--color-bg-main);
+  border: 1px solid var(--color-border-wood);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 4px;
+  cursor: default;
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+.slot:not(.slotEmpty):hover {
+  border-color: var(--color-accent-gold);
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.slotEmpty {
+  opacity: 0.15;
+}
+
+.slotIcon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.slotName {
   font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--color-text-primary);
-  letter-spacing: 0.5px;
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
 }
 
 .pips {
   display: flex;
-  gap: 4px;
-  flex-shrink: 0;
+  gap: 2px;
 }
 
 .pipFilled {
-  font-size: 8px;
+  font-size: 6px;
   color: var(--color-accent-gold);
 }
 
 .pipEmpty {
-  font-size: 8px;
+  font-size: 6px;
   color: var(--color-border-wood);
 }
 
+@media (max-width: 1024px) {
+  .slotGrid { grid-template-columns: repeat(5, 1fr); }
+  .skills { padding: 24px 32px; }
+}
+
 @media (max-width: 768px) {
-  .skills { padding: 32px 24px; }
-  .skillList { grid-template-columns: repeat(2, 1fr); }
+  .slotGrid { grid-template-columns: repeat(4, 1fr); }
+  .skills { padding: 20px 16px; }
 }
