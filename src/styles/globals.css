@@ -14,7 +14,7 @@ html {
 
 body {
   background-color: var(--color-bg-main);
-  color: var(--color-text-dust-light);
+  color: var(--color-text-secondary);
   font-family: var(--font-mono);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +22,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  color: var(--color-text-bleached);
+  color: var(--color-text-primary);
 }
 
 a {
