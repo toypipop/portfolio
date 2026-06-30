@@ -7,9 +7,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const CONTACT_LINKS = [
   {
-    href: null as string | null,
+    href: 'https://github.com/toypipop',
     label: 'GitHub',
-    value: 'github.com/[username]',
+    value: 'github.com/toypipop',
     icon: '⌥',
   },
   {
@@ -19,9 +19,9 @@ const CONTACT_LINKS = [
     icon: '✉',
   },
   {
-    href: null as string | null,
+    href: 'tel:+660935575507',
     label: 'Phone',
-    value: '[coming soon]',
+    value: '093-557-5507',
     icon: '◈',
   },
 ]
