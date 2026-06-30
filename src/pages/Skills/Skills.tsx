@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import skills from '../../data/skills'
@@ -7,8 +7,6 @@ import styles from './Skills.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const SLOT_WIDTH = 62
-const SLOT_GAP = 4
 
 const LEVEL_CLASS: Record<1 | 2 | 3, string> = {
   1: styles.slotSilver,
@@ -43,34 +41,9 @@ function ItemSlot({ skill }: { skill: Skill }): React.JSX.Element {
   )
 }
 
-function EmptySlot(): React.JSX.Element {
-  return <div className={`${styles.slot} ${styles.slotEmpty}`} />
-}
-
 export default function Skills(): React.JSX.Element {
   const sectionRef = useRef<HTMLElement>(null)
   const gridRefs = useRef<(HTMLDivElement | null)[]>([])
-  const [emptyCounts, setEmptyCounts] = useState<number[]>(skills.map(() => 0))
-
-  useEffect(() => {
-    const recalc = () => {
-      setEmptyCounts(
-        skills.map((group, i) => {
-          const grid = gridRefs.current[i]
-          if (!grid) return 0
-          const cols = Math.floor((grid.clientWidth + SLOT_GAP) / (SLOT_WIDTH + SLOT_GAP))
-          if (cols <= 0) return 0
-          const remainder = group.items.length % cols
-          return remainder === 0 ? 0 : cols - remainder
-        })
-      )
-    }
-
-    const ro = new ResizeObserver(recalc)
-    gridRefs.current.forEach((g) => g && ro.observe(g))
-    recalc()
-    return () => ro.disconnect()
-  }, [])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -109,9 +82,6 @@ export default function Skills(): React.JSX.Element {
             >
               {group.items.map((skill) => (
                 <ItemSlot key={skill.name} skill={skill} />
-              ))}
-              {Array.from({ length: emptyCounts[i] ?? 0 }).map((_, j) => (
-                <EmptySlot key={j} />
               ))}
             </div>
           </div>

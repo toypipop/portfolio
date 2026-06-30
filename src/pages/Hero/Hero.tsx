@@ -11,8 +11,8 @@ export default function Hero(): React.JSX.Element {
           <p className={styles.role}>AUSSWAPIPOP</p>
           <div className={styles.divider} />
           <p className={styles.summary}>
-            Backend-focused Web Developer with hands-on experience building full-stack
-            applications using Django, Go, React, PostgreSQL, and Docker.
+            Backend-focused Web Developer with hands-on experience
+            building full-stack applications.
             Crafting software with care, one commit at a time.
           </p>
           <div className={styles.cta}>

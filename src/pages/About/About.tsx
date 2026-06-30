@@ -19,6 +19,7 @@ export default function About(): React.JSX.Element {
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
   const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState<'profile' | 'history'>('profile')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -73,7 +74,7 @@ export default function About(): React.JSX.Element {
             </div>
             <div className={styles.overlayStat}>
               <span className={styles.overlayKey}>LV</span>
-              <span className={styles.overlayVal}>2+ yrs EXP</span>
+              <span className={styles.overlayVal}>3 yrs 6 mo EXP</span>
             </div>
             <div className={styles.overlayStat}>
               <span className={styles.overlayKey}>HP</span>
@@ -82,15 +83,15 @@ export default function About(): React.JSX.Element {
               </span>
             </div>
             <div className={styles.overlayStat}>
-              <span className={styles.overlayKey}>STA</span>
-              <span className={styles.overlayVal}>
-                <StatBar pct={50} /> 50
-              </span>
-            </div>
-            <div className={styles.overlayStat}>
               <span className={styles.overlayKey}>MANA</span>
               <span className={styles.overlayVal}>
                 <StatBar pct={0} /> 0
+              </span>
+            </div>
+            <div className={styles.overlayStat}>
+              <span className={styles.overlayKey}>STA</span>
+              <span className={styles.overlayVal}>
+                <StatBar pct={50} /> 50
               </span>
             </div>
             <div className={styles.overlayStat}>
@@ -103,21 +104,59 @@ export default function About(): React.JSX.Element {
 
         <div ref={rightRef} className={styles.bio}>
           <div className={styles.logCard}>
-            <div className={styles.logLabel}>// Combat Record</div>
-            <div className={styles.bioName}>PONGYANIN AUSSWAPIPOP</div>
-            <div className={styles.bioRole}>Backend-focused Web Developer</div>
-            <p className={styles.bioText}>
-              Backend-focused Web Developer with hands-on experience building full-stack
-              applications using Django, Go, React, PostgreSQL, and Docker. Experienced
-              in RESTful API development and modern web application architecture, with
-              personal hands-on practice in CI/CD workflows, VPS deployment, and web
-              infrastructure.
-            </p>
-            <p className={styles.bioText}>
-              Currently at Softnetwork (Dec 2023 – Present), developing and maintaining
-              full-stack web applications using Django and the MVT architecture. Implementing
-              business workflows for loan, hire purchase, and asset management systems.
-            </p>
+            <div className={styles.tabs}>
+              <button
+                className={`${styles.tab} ${activeTab === 'profile' ? styles.tabActive : ''}`}
+                onClick={() => setActiveTab('profile')}
+              >
+                // Profile
+              </button>
+              <button
+                className={`${styles.tab} ${activeTab === 'history' ? styles.tabActive : ''}`}
+                onClick={() => setActiveTab('history')}
+              >
+                // Battle History
+              </button>
+            </div>
+
+            {activeTab === 'profile' && (
+              <div className={styles.tabContent}>
+                <div className={styles.bioName}>PONGYANIN AUSSWAPIPOP</div>
+                <div className={styles.bioRole}>Backend-focused Web Developer</div>
+                <p className={styles.bioText}>
+                  Backend-focused Web Developer with hands-on experience building
+                  full-stack applications using Django, Go, React, PostgreSQL, and Docker.
+                  Experienced in RESTful API development and modern web application
+                  architecture, with personal hands-on practice in CI/CD workflows,
+                  VPS deployment, and web infrastructure.
+                </p>
+              </div>
+            )}
+
+            {activeTab === 'history' && (
+              <div className={styles.tabContent}>
+                <div className={styles.expEntry}>
+                  <div className={styles.expCompany}>Softnetwork</div>
+                  <div className={styles.expRole}>Backend-focused Web Developer</div>
+                  <div className={styles.expDate}>Dec 2023 – Present</div>
+                  <ul className={styles.expList}>
+                    <li>Developed and maintained full-stack web applications using Django and the MVT architecture.</li>
+                    <li>Implemented business workflows and backend features for loan, hire purchase, and asset management systems.</li>
+                    <li>Collaborated on frontend development using React and TypeScript for internal web applications.</li>
+                    <li>Worked with database operations, application logic, and internal system enhancements.</li>
+                  </ul>
+                </div>
+                <div className={styles.expEntry}>
+                  <div className={styles.expCompany}>SJP Information System</div>
+                  <div className={styles.expRole}>Developer & IT Support</div>
+                  <div className={styles.expDate}>Jan 2023 – Dec 2023</div>
+                  <ul className={styles.expList}>
+                    <li>Developed and improved a web application, migrating from Node.js and React.</li>
+                    <li>Installed and maintained IoT devices.</li>
+                  </ul>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
