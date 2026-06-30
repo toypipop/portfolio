@@ -5,5 +5,5 @@ test('renders hero content', () => {
   render(<Hero />)
   expect(screen.getByText('PONGYANIN')).toBeInTheDocument()
   expect(screen.getByText('AUSSWAPIPOP')).toBeInTheDocument()
-  expect(screen.getByText(/VIEW HARVEST/i)).toBeInTheDocument()
+  expect(screen.getByText(/VIEW ENCOUNTERS/i)).toBeInTheDocument()
 })

@@ -1,6 +1,6 @@
 .projects {
   min-height: calc(100vh - var(--navbar-height));
-  background-color: var(--color-bg-alt);
+  background-color: var(--color-bg-projects);
   padding: 48px 160px;
   position: relative;
   overflow: hidden;
@@ -42,6 +42,7 @@
   background: var(--color-card-bg);
   transition: border-color 200ms ease, transform 200ms ease;
   overflow: hidden;
+  position: relative;
 }
 
 .card:hover {
@@ -49,27 +50,158 @@
   transform: translateY(-2px);
 }
 
-.cardImage {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  object-position: left top;
-  display: block;
+/* Tier borders */
+.cardNormal { border-color: #94a3b8; }
+.cardNormal:hover { border-color: #94a3b8; }
+
+.cardBoss {
+  border-color: #f87171;
+  box-shadow: 0 0 12px rgba(248, 113, 113, 0.25);
+}
+.cardBoss:hover {
+  border-color: #f87171;
+  box-shadow: 0 0 20px rgba(248, 113, 113, 0.4);
 }
 
-.cardImagePlaceholder {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: var(--color-bg-main);
+/* Meta bar */
+.cardMeta {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--color-border-wood-light);
+}
+
+.cardType {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 10px;
   color: var(--color-text-muted);
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.cardRarity {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.monsterDisplay {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  gap: 10px;
+}
+
+.monsterBoss {
+  background: rgba(248, 113, 113, 0.06);
+  border-bottom: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.monsterNormal {
+  background: var(--color-bg-main);
   border-bottom: 1px solid var(--color-border-wood-light);
+}
+
+.monsterIcon {
+  font-size: 52px;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(248, 113, 113, 0.4));
+}
+
+.monsterNormal .monsterIcon {
+  filter: grayscale(1) opacity(0.5);
+}
+
+.screenshotHint {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--color-text-secondary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: blinkHint 1.5s step-end infinite;
+}
+
+@keyframes blinkHint {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.2; }
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0.18) 4px
+  );
+  pointer-events: none;
+}
+
+/* HP bar */
+.hpRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--color-border-wood-light);
+}
+
+.hpLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-accent-coral);
+  letter-spacing: 2px;
+  min-width: 16px;
+}
+
+.hpBar {
+  flex: 1;
+  height: 6px;
+  border: 1px solid var(--color-accent-coral);
+  position: relative;
+}
+
+.hpFill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: var(--color-accent-coral);
+}
+
+.hpUnknown {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-text-muted);
+  letter-spacing: 2px;
+}
+
+/* Lightbox */
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(6, 10, 20, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid var(--color-border-wood);
+  cursor: default;
 }
 
 .cardBody {

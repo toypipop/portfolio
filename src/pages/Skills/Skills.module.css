@@ -1,7 +1,5 @@
 .skills {
-  height: calc(100vh - var(--navbar-height));
-  overflow-y: auto;
-  background-color: var(--color-bg-main);
+  background-color: var(--color-bg-skills);
   padding: 28px 160px;
   position: relative;
 }
@@ -84,6 +82,13 @@
   z-index: 10;
 }
 
+.slotRainbow:not(.slotEmpty):hover {
+  background:
+    linear-gradient(rgba(56, 189, 248, 0.06), rgba(56, 189, 248, 0.06)) padding-box,
+    linear-gradient(var(--color-bg-main), var(--color-bg-main)) padding-box,
+    linear-gradient(135deg, #f87171, #fb923c, #facc15, #4ade80, #38bdf8, #818cf8, #e879f9) border-box;
+}
+
 .slot:not(.slotEmpty):hover .tooltip {
   display: block;
 }
@@ -128,22 +133,30 @@
   font-size: 11px;
   color: var(--color-text-primary);
   display: block;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
+}
+
+.tooltipRarity {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 6px;
 }
 
 .tooltipPips {
   display: flex;
-  gap: 3px;
+  gap: 4px;
   justify-content: center;
 }
 
 .pipFilled {
-  font-size: 6px;
+  font-size: 10px;
   color: var(--color-accent-gold);
 }
 
 .pipEmpty {
-  font-size: 6px;
+  font-size: 10px;
   color: var(--color-border-wood);
 }
 

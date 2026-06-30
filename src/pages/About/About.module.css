@@ -1,7 +1,7 @@
 .about {
   position: relative;
   min-height: calc(100vh - var(--navbar-height));
-  background-color: var(--color-bg-alt);
+  background-color: var(--color-bg-about);
   padding: 48px 160px;
   display: flex;
   flex-direction: column;
@@ -36,6 +36,8 @@
 
 .photoWrapper {
   position: relative;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .photo {
@@ -95,6 +97,120 @@
   color: var(--color-text-secondary);
   line-height: 1.8;
   margin-bottom: 10px;
+}
+
+/* Hover overlay */
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 10, 20, 0.90);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.photoWrapper:hover .photoOverlay {
+  opacity: 1;
+}
+
+.overlayLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-accent-green);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.overlayName {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.overlayDivider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border-wood);
+  margin-bottom: 10px;
+}
+
+.overlayStat {
+  display: flex;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.overlayKey {
+  color: var(--color-accent-green);
+  min-width: 44px;
+  opacity: 0.8;
+}
+
+.overlayVal {
+  color: var(--color-text-primary);
+}
+
+.statBar {
+  display: inline-block;
+  width: 72px;
+  height: 7px;
+  border: 1px solid var(--color-accent-gold);
+  vertical-align: middle;
+  position: relative;
+  margin-right: 4px;
+}
+
+.statFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--color-accent-gold);
+}
+
+.overlayHint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-accent-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 14px;
+  animation: blinkHint 1.5s step-end infinite;
+}
+
+@keyframes blinkHint {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 0.3; }
+}
+
+/* Lightbox */
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(6, 10, 20, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid var(--color-border-wood);
+  cursor: default;
 }
 
 @media (max-width: 768px) {

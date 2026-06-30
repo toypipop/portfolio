@@ -16,13 +16,28 @@ const LEVEL_CLASS: Record<1 | 2 | 3, string> = {
   3: styles.slotRainbow,
 }
 
+const RARITY: Record<1 | 2 | 3, { label: string; color: string }> = {
+  1: { label: 'COMMON',    color: '#94a3b8' },
+  2: { label: 'RARE',      color: '#f0c040' },
+  3: { label: 'LEGENDARY', color: '#e879f9' },
+}
+
 function ItemSlot({ skill }: { skill: Skill }): React.JSX.Element {
+  const rarity = RARITY[skill.level]
   return (
     <div className={`${styles.slot} ${LEVEL_CLASS[skill.level]}`}>
       <span className={styles.slotIcon}>{skill.icon}</span>
       <span className={styles.slotName}>{skill.name}</span>
       <div className={styles.tooltip}>
         <span className={styles.tooltipName}>{skill.name}</span>
+        <span className={styles.tooltipRarity} style={{ color: rarity.color }}>
+          {rarity.label}
+        </span>
+        <div className={styles.tooltipPips}>
+          {[1, 2, 3].map((p) => (
+            <span key={p} className={p <= skill.level ? styles.pipFilled : styles.pipEmpty}>●</span>
+          ))}
+        </div>
       </div>
     </div>
   )

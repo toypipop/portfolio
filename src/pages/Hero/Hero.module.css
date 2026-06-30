@@ -7,7 +7,18 @@
   align-items: flex-start;
   padding: 40px 160px;
   overflow: hidden;
-  background-color: var(--color-bg-main);
+  background-color: var(--color-bg-hero);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 12, 24, 0.72);
+  z-index: 1;
 }
 
 .content {

@@ -36,7 +36,7 @@ export default function Navbar(): React.JSX.Element {
     <>
       <nav className={styles.navbar}>
         <a href="#hero" className={styles.logo}>
-          PONGY<span>A</span>NIN
+          PONG<span>YA</span>NIN
         </a>
 
         <ul className={styles.links}>

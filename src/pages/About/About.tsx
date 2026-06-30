@@ -1,14 +1,24 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import profileImg from '../../assets/profile.png'
+import realProfileImg from '../../assets/old_profile.png'
 import styles from './About.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
+function StatBar({ pct }: { pct: number }) {
+  return (
+    <span className={styles.statBar}>
+      <span className={styles.statFill} style={{ width: `${pct}%` }} />
+    </span>
+  )
+}
+
 export default function About(): React.JSX.Element {
   const leftRef = useRef<HTMLDivElement>(null)
   const rightRef = useRef<HTMLDivElement>(null)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -32,23 +42,68 @@ export default function About(): React.JSX.Element {
     return () => ctx.revert()
   }, [])
 
+  useEffect(() => {
+    if (!lightboxOpen) return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxOpen(false)
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [lightboxOpen])
+
   return (
     <section id="about" className={styles.about}>
       <p className={styles.sectionLabel}>About</p>
-      <h2 className={styles.title}>{"Farmer's Journal"}</h2>
+      <h2 className={styles.title}>{"Character"}</h2>
 
       <div className={styles.grid}>
-        <div ref={leftRef} className={styles.photoWrapper}>
+        <div ref={leftRef} className={styles.photoWrapper} onClick={() => setLightboxOpen(true)}>
           <img
             src={profileImg}
             alt="Pongyanin Ausswapipop"
             className={styles.photo}
           />
+          <div className={styles.photoOverlay}>
+            <div className={styles.overlayLabel}>// CHARACTER STATUS</div>
+            <div className={styles.overlayName}>PONGYANIN</div>
+            <div className={styles.overlayDivider} />
+            <div className={styles.overlayStat}>
+              <span className={styles.overlayKey}>CLASS</span>
+              <span className={styles.overlayVal}>Backend Berserker</span>
+            </div>
+            <div className={styles.overlayStat}>
+              <span className={styles.overlayKey}>LV</span>
+              <span className={styles.overlayVal}>2+ yrs EXP</span>
+            </div>
+            <div className={styles.overlayStat}>
+              <span className={styles.overlayKey}>HP</span>
+              <span className={styles.overlayVal}>
+                <StatBar pct={100} /> MAX
+              </span>
+            </div>
+            <div className={styles.overlayStat}>
+              <span className={styles.overlayKey}>STA</span>
+              <span className={styles.overlayVal}>
+                <StatBar pct={50} /> 50
+              </span>
+            </div>
+            <div className={styles.overlayStat}>
+              <span className={styles.overlayKey}>MANA</span>
+              <span className={styles.overlayVal}>
+                <StatBar pct={0} /> 0
+              </span>
+            </div>
+            <div className={styles.overlayStat}>
+              <span className={styles.overlayKey}>BUFF</span>
+              <span className={styles.overlayVal}>Coffee +3 / Edamame +2</span>
+            </div>
+            <div className={styles.overlayHint}>[ Click to view real photo ]</div>
+          </div>
         </div>
 
         <div ref={rightRef} className={styles.bio}>
           <div className={styles.logCard}>
-            <div className={styles.logLabel}>// Journal Entry</div>
+            <div className={styles.logLabel}>// Combat Record</div>
             <div className={styles.bioName}>PONGYANIN AUSSWAPIPOP</div>
             <div className={styles.bioRole}>Backend-focused Web Developer</div>
             <p className={styles.bioText}>
@@ -66,6 +121,17 @@ export default function About(): React.JSX.Element {
           </div>
         </div>
       </div>
+
+      {lightboxOpen && (
+        <div className={styles.lightboxBackdrop} onClick={() => setLightboxOpen(false)}>
+          <img
+            src={realProfileImg}
+            alt="Pongyanin real photo"
+            className={styles.lightboxImg}
+            onClick={e => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   )
 }

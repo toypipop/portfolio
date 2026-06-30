@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import contactBg from '../../assets/contact_bg.png'
 import styles from './Contact.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -13,13 +14,13 @@ const CONTACT_LINKS = [
     icon: '⌥',
   },
   {
-    href: 'mailto:2509pipop4951pi@gmail.com',
+    href: '',
     label: 'Email',
     value: '2509pipop4951pi@gmail.com',
     icon: '✉',
   },
   {
-    href: 'tel:+660935575507',
+    href: '',
     label: 'Phone',
     value: '093-557-5507',
     icon: '◈',
@@ -50,7 +51,7 @@ export default function Contact(): React.JSX.Element {
   }, [])
 
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" className={styles.contact} style={{ backgroundImage: `url(${contactBg})` }}>
       <p className={styles.signal}>// Message Board</p>
       <h2 className={styles.title}>Contact</h2>
       <p className={styles.subtitle}>

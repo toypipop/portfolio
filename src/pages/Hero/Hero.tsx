@@ -1,8 +1,9 @@
+import homeBg from '../../assets/home_bg.png'
 import styles from './Hero.module.css'
 
 export default function Hero(): React.JSX.Element {
   return (
-    <section id="hero" className={styles.hero}>
+    <section id="hero" className={styles.hero} style={{ backgroundImage: `url(${homeBg})` }}>
       <div className={styles.content}>
         <div className={styles.contentInner}>
           <p className={styles.eyebrow}>Web Developer · Chiang Mai</p>
@@ -15,7 +16,7 @@ export default function Hero(): React.JSX.Element {
             Crafting software with care, one commit at a time.
           </p>
           <div className={styles.cta}>
-            <a href="#projects" className={styles.btnPrimary}>[ VIEW HARVEST ]</a>
+            <a href="#projects" className={styles.btnPrimary}>[ VIEW ENCOUNTERS ]</a>
             <a href="#contact" className={styles.btnSecondary}>CONTACT</a>
           </div>
         </div>

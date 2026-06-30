@@ -3,6 +3,6 @@ import Projects from './Projects'
 
 test('renders projects page', () => {
   render(<Projects />)
-  expect(screen.getByText('Harvest')).toBeInTheDocument()
+  expect(screen.getByText('Encounter Log')).toBeInTheDocument()
   expect(screen.getByText('Payroll System')).toBeInTheDocument()
 })

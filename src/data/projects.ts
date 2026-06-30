@@ -5,6 +5,8 @@ export interface Project {
   tags: string[]
   url: string | null
   image: string | null
+  tier: 'normal' | 'boss'
+  type: string
 }
 
 const projects: Project[] = [
@@ -15,23 +17,29 @@ const projects: Project[] = [
       'Full-stack payroll web application. Manages employee records, salary calculation, and monthly payslip generation.',
     tags: ['Go', 'React', 'PostgreSQL', 'Docker'],
     url: 'https://pay-app-uat.getpipop.org/',
-    image: '/projects/payroll.png'
+    image: '/projects/payroll.png',
+    tier: 'boss',
+    type: 'Ancient',
   },
   {
     id: 'placeholder-1',
-    title: 'Coming Soon',
-    description: 'Project details coming soon.',
+    title: '???',
+    description: 'Identity unknown. Encounter pending.',
     tags: [],
     url: null,
     image: null,
+    tier: 'normal',
+    type: 'Unknown',
   },
   {
     id: 'placeholder-2',
-    title: 'Coming Soon',
-    description: 'Project details coming soon.',
+    title: '???',
+    description: 'Identity unknown. Encounter pending.',
     tags: [],
     url: null,
     image: null,
+    tier: 'normal',
+    type: 'Unknown',
   },
 ]
 
