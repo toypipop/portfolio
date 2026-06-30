@@ -2,7 +2,7 @@
   height: calc(100vh - var(--navbar-height));
   overflow-y: auto;
   background-color: var(--color-bg-main);
-  padding: 28px 48px;
+  padding: 28px 160px;
   position: relative;
 }
 
@@ -147,8 +147,12 @@
   color: var(--color-border-wood);
 }
 
+@media (max-width: 1024px) {
+  .skills { padding: 24px 40px; }
+}
+
 @media (max-width: 768px) {
-  .skills { padding: 20px 16px; }
+  .skills { padding: 20px 24px; }
   .slot { width: 52px; height: 58px; }
   .slotIcon { font-size: 14px; }
 }
