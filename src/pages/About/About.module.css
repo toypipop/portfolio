@@ -10,22 +10,21 @@
 
 .sectionLabel {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 12px;
   color: var(--color-accent-green);
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
 
-.sectionLabel::before { content: '// '; opacity: 0.6; }
-
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(14px, 2vw, 24px);
-  font-weight: 400;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 600;
   color: var(--color-text-primary);
   text-transform: uppercase;
-  margin-bottom: 28px;
+  letter-spacing: -0.5px;
+  margin-bottom: 32px;
 }
 
 .grid {
@@ -44,7 +43,7 @@
   aspect-ratio: 3/4;
   object-fit: cover;
   display: block;
-  border: 3px solid var(--color-border-wood);
+  border: 1px solid var(--color-border-wood);
 }
 
 .bio {
@@ -54,45 +53,45 @@
 }
 
 .logCard {
-  border: 3px solid var(--color-border-wood);
+  border: 1px solid var(--color-border-wood);
   background: var(--color-card-bg);
   padding: 20px 24px;
 }
 
 .logLabel {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 11px;
   color: var(--color-accent-green);
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 12px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .bioName {
   font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--color-text-primary);
-  letter-spacing: 2px;
-  margin-bottom: 6px;
-  line-height: 1.6;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  line-height: 1.4;
 }
 
 .bioRole {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 13px;
   color: var(--color-accent-gold);
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .bioText {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 13px;
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: 1.8;
   margin-bottom: 10px;
 }
 

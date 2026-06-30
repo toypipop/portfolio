@@ -10,16 +10,16 @@
   justify-content: space-between;
   padding: 0 32px;
   background: var(--color-bg-nav);
-  backdrop-filter: blur(4px);
-  border-bottom: 3px solid var(--color-border-wood);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border-wood);
 }
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--color-text-primary);
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -36,14 +36,14 @@
 
 .link {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-text-secondary);
   text-decoration: none;
   transition: color 150ms ease;
   padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .link:hover {
@@ -55,7 +55,6 @@
   border-bottom-color: var(--color-accent-gold);
 }
 
-/* Hamburger — hidden on desktop */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -68,13 +67,12 @@
 
 .hamburger span {
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 22px;
+  height: 1px;
   background: var(--color-text-primary);
   transition: transform 200ms ease, opacity 200ms ease;
 }
 
-/* Mobile overlay */
 .overlay {
   display: none;
   position: fixed;
@@ -93,7 +91,7 @@
 
 .overlayLink {
   font-family: var(--font-heading);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
   letter-spacing: 3px;
   text-transform: uppercase;

@@ -8,54 +8,53 @@
 
 .sectionLabel {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 12px;
   color: var(--color-accent-green);
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   position: relative;
   z-index: 1;
 }
 
-.sectionLabel::before { content: '// '; opacity: 0.6; }
-
 .title {
   font-family: var(--font-heading);
-  font-size: clamp(18px, 3vw, 32px);
-  font-weight: 400;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 600;
   color: var(--color-text-primary);
   text-transform: uppercase;
-  margin-bottom: 28px;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
   position: relative;
   z-index: 1;
 }
 
 .group {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   position: relative;
   z-index: 1;
 }
 
 .groupHeader {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 11px;
   color: var(--color-accent-gold);
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .vineDivider {
   width: 100%;
-  height: 2px;
+  height: 1px;
   background: var(--color-border-wood-light);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .skillList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0px 32px;
+  gap: 0 32px;
 }
 
 .skillRow {
@@ -68,29 +67,28 @@
 
 .skillName {
   font-family: var(--font-mono);
-  font-size: 18px;
+  font-size: 13px;
   color: var(--color-text-primary);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .pips {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   flex-shrink: 0;
 }
 
 .pipFilled {
-  font-size: 10px;
+  font-size: 8px;
   color: var(--color-accent-gold);
-  text-shadow: 0 0 6px var(--color-gold-glow);
 }
 
 .pipEmpty {
-  font-size: 10px;
+  font-size: 8px;
   color: var(--color-border-wood);
 }
 
 @media (max-width: 768px) {
-  .skills { padding: 48px 32px; }
+  .skills { padding: 32px 24px; }
   .skillList { grid-template-columns: repeat(2, 1fr); }
 }
