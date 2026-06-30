@@ -40,8 +40,10 @@
 
 .photo {
   width: 100%;
+  max-height: 280px;
   aspect-ratio: 3/4;
   object-fit: cover;
+  object-position: center top;
   display: block;
   border: 1px solid var(--color-border-wood);
 }
