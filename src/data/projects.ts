@@ -25,6 +25,14 @@ const projects: Project[] = [
     url: null,
     image: null,
   },
+  {
+    id: 'placeholder-2',
+    title: 'Coming Soon',
+    description: 'Project details coming soon.',
+    tags: [],
+    url: null,
+    image: null,
+  },
 ]
 
 export default projects
