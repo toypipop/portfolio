@@ -19,7 +19,9 @@ export default function Navbar(): React.JSX.Element {
       (entries) => {
         const visible = entries.filter((e) => e.isIntersecting)
         if (visible.length === 0) return
-        const topmost = visible.reduce((a, b) =>
+        const inView = visible.filter((e) => e.boundingClientRect.top >= 0)
+        const candidates = inView.length > 0 ? inView : visible
+        const topmost = candidates.reduce((a, b) =>
           a.boundingClientRect.top < b.boundingClientRect.top ? a : b
         )
         setActiveId(topmost.target.id)
