@@ -9,7 +9,6 @@
   padding: 80px 24px;
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
 .signal {
@@ -61,7 +60,7 @@
 
 .link:hover {
   border-color: var(--color-accent-gold);
-  background: rgba(240, 192, 64, 0.05);
+  background: var(--color-gold-shadow);
 }
 
 .linkIcon {
