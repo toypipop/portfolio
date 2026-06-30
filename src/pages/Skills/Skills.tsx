@@ -7,7 +7,7 @@ import styles from './Skills.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const SLOT_COLS = 6
+const SLOT_COLS = 10
 
 function Pips({ level }: { level: 1 | 2 | 3 }): React.JSX.Element {
   return (

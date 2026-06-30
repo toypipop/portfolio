@@ -50,8 +50,8 @@
 
 .slotGrid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 6px;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
 }
 
 .slot {
@@ -62,8 +62,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 6px 4px;
+  gap: 2px;
+  padding: 4px 2px;
   cursor: default;
   transition: border-color 150ms ease, background 150ms ease;
 }
@@ -78,17 +78,17 @@
 }
 
 .slotIcon {
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1;
 }
 
 .slotName {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 8px;
   color: var(--color-text-secondary);
   text-align: center;
   line-height: 1.2;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.2px;
 }
 
 .pips {
@@ -97,21 +97,21 @@
 }
 
 .pipFilled {
-  font-size: 6px;
+  font-size: 5px;
   color: var(--color-accent-gold);
 }
 
 .pipEmpty {
-  font-size: 6px;
+  font-size: 5px;
   color: var(--color-border-wood);
 }
 
 @media (max-width: 1024px) {
-  .slotGrid { grid-template-columns: repeat(5, 1fr); }
+  .slotGrid { grid-template-columns: repeat(8, 1fr); }
   .skills { padding: 24px 32px; }
 }
 
 @media (max-width: 768px) {
-  .slotGrid { grid-template-columns: repeat(4, 1fr); }
+  .slotGrid { grid-template-columns: repeat(6, 1fr); }
   .skills { padding: 20px 16px; }
 }
