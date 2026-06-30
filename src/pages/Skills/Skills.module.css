@@ -66,11 +66,14 @@
   justify-content: center;
   gap: 3px;
   cursor: default;
-  transition: border-color 150ms ease, background 150ms ease;
+  transition: opacity 150ms ease, background 150ms ease;
 }
 
+.slotBronze { border-color: #cd7f32; }
+.slotSilver { border-color: #94a3b8; }
+.slotGold   { border-color: #f0c040; box-shadow: 0 0 6px rgba(240,192,64,0.2); }
+
 .slot:not(.slotEmpty):hover {
-  border-color: var(--color-accent-gold);
   background: rgba(56, 189, 248, 0.06);
   z-index: 10;
 }

@@ -19,18 +19,19 @@ function Pips({ level }: { level: 1 | 2 | 3 }): React.JSX.Element {
   )
 }
 
+const LEVEL_CLASS: Record<1 | 2 | 3, string> = {
+  1: styles.slotBronze,
+  2: styles.slotSilver,
+  3: styles.slotGold,
+}
+
 function ItemSlot({ skill }: { skill: Skill }): React.JSX.Element {
   return (
-    <div className={styles.slot}>
+    <div className={`${styles.slot} ${LEVEL_CLASS[skill.level]}`}>
       <span className={styles.slotIcon}>{skill.icon}</span>
       <span className={styles.slotName}>{skill.name}</span>
       <div className={styles.tooltip}>
         <span className={styles.tooltipName}>{skill.name}</span>
-        <div className={styles.tooltipPips}>
-          {([1, 2, 3] as const).map((n) => (
-            <span key={n} className={n <= skill.level ? styles.pipFilled : styles.pipEmpty}>◆</span>
-          ))}
-        </div>
       </div>
     </div>
   )
