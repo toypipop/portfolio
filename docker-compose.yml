@@ -3,8 +3,8 @@ services:
     build: .
     restart: unless-stopped
     networks:
-      - infra_default
+      - infra_infra_default
 
 networks:
-  infra_default:
+  infra_infra_default:
     external: true
