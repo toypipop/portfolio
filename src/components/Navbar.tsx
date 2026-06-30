@@ -14,22 +14,22 @@ export default function Navbar(): React.JSX.Element {
   const [activeId, setActiveId] = useState('hero')
 
   useEffect(() => {
-    const sections = document.querySelectorAll<HTMLElement>('section[id]')
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting)
-        if (visible.length === 0) return
-        const inView = visible.filter((e) => e.boundingClientRect.top >= 0)
-        const candidates = inView.length > 0 ? inView : visible
-        const topmost = candidates.reduce((a, b) =>
-          a.boundingClientRect.top < b.boundingClientRect.top ? a : b
-        )
-        setActiveId(topmost.target.id)
-      },
-      { rootMargin: '0px 0px -60% 0px', threshold: 0 }
-    )
-    sections.forEach((section) => observer.observe(section))
-    return () => observer.disconnect()
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('section[id]'))
+    const navH = 60
+
+    const updateActive = () => {
+      let current = sections[0]?.id ?? 'hero'
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= navH + 1) {
+          current = section.id
+        }
+      }
+      setActiveId(current)
+    }
+
+    window.addEventListener('scroll', updateActive, { passive: true })
+    updateActive()
+    return () => window.removeEventListener('scroll', updateActive)
   }, [])
 
   return (
