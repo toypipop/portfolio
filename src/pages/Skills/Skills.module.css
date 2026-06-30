@@ -49,69 +49,86 @@
 }
 
 .slotGrid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 4px;
 }
 
 .slot {
-  aspect-ratio: 1;
+  position: relative;
+  width: 36px;
+  height: 36px;
   background: var(--color-bg-main);
   border: 1px solid var(--color-border-wood);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  padding: 4px 2px;
   cursor: default;
   transition: border-color 150ms ease, background 150ms ease;
 }
 
 .slot:not(.slotEmpty):hover {
   border-color: var(--color-accent-gold);
-  background: rgba(56, 189, 248, 0.05);
+  background: rgba(56, 189, 248, 0.06);
+  z-index: 10;
+}
+
+.slot:not(.slotEmpty):hover .tooltip {
+  display: block;
 }
 
 .slotEmpty {
-  opacity: 0.15;
+  opacity: 0.12;
 }
 
 .slotIcon {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
+  pointer-events: none;
 }
 
-.slotName {
+.slotName { display: none; }
+.pips { display: none; }
+
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg-overlay);
+  border: 1px solid var(--color-accent-gold);
+  padding: 4px 8px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tooltipName {
   font-family: var(--font-mono);
-  font-size: 8px;
-  color: var(--color-text-secondary);
-  text-align: center;
-  line-height: 1.2;
-  letter-spacing: 0.2px;
+  font-size: 11px;
+  color: var(--color-text-primary);
+  display: block;
+  margin-bottom: 3px;
 }
 
-.pips {
+.tooltipPips {
   display: flex;
-  gap: 2px;
+  gap: 3px;
+  justify-content: center;
 }
 
 .pipFilled {
-  font-size: 5px;
+  font-size: 6px;
   color: var(--color-accent-gold);
 }
 
 .pipEmpty {
-  font-size: 5px;
+  font-size: 6px;
   color: var(--color-border-wood);
 }
 
-@media (max-width: 1024px) {
-  .slotGrid { grid-template-columns: repeat(8, 1fr); }
-  .skills { padding: 24px 32px; }
-}
-
 @media (max-width: 768px) {
-  .slotGrid { grid-template-columns: repeat(6, 1fr); }
   .skills { padding: 20px 16px; }
+  .slot { width: 32px; height: 32px; }
+  .slotIcon { font-size: 14px; }
 }

@@ -23,8 +23,14 @@ function ItemSlot({ skill }: { skill: Skill }): React.JSX.Element {
   return (
     <div className={styles.slot}>
       <span className={styles.slotIcon}>{skill.icon}</span>
-      <span className={styles.slotName}>{skill.name}</span>
-      <Pips level={skill.level} />
+      <div className={styles.tooltip}>
+        <span className={styles.tooltipName}>{skill.name}</span>
+        <div className={styles.tooltipPips}>
+          {([1, 2, 3] as const).map((n) => (
+            <span key={n} className={n <= skill.level ? styles.pipFilled : styles.pipEmpty}>◆</span>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
