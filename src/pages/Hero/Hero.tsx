@@ -8,7 +8,7 @@ export default function Hero(): React.JSX.Element {
         <div className={styles.contentInner}>
           <p className={styles.eyebrow}>Web Developer · Chiang Mai</p>
           <h1 className={styles.name}>PONGYANIN</h1>
-          <p className={styles.role}>AUSSWAPIPOP</p>
+          <p className={styles.role}>AUSSWAPIPOP 1.0</p>
           <div className={styles.divider} />
           <p className={styles.summary}>
             Backend-focused Web Developer with hands-on experience
