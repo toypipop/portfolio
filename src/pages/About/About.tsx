@@ -122,7 +122,7 @@ export default function About(): React.JSX.Element {
             {activeTab === 'profile' && (
               <div className={styles.tabContent}>
                 <div className={styles.bioName}>PONGYANIN AUSSWAPIPOP</div>
-                <div className={styles.bioRole}>Backend-focused Web Developer</div>
+                <div className={styles.bioRole}>Fullstack Web Developer</div>
                 <p className={styles.bioText}>
                   Backend-focused Web Developer with hands-on experience building
                   full-stack applications using Django, Go, React, PostgreSQL, and Docker.
