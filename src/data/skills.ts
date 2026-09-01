@@ -52,10 +52,6 @@ const skills: SkillGroup[] = [
       { name: 'GH Actions', icon: '🤖', level: 2 },
       { name: 'Linux', icon: '🐧', level: 2 },
       { name: 'VPS & Proxy', icon: '☁', level: 2 },
-      { name: 'AWS EC2', icon: '🖥', level: 1 },
-      { name: 'AWS IAM', icon: '🔑', level: 1 },
-      { name: 'AWS VPC', icon: '🕸', level: 1 },
-      { name: 'AWS ECR', icon: '📦', level: 1 },
     ],
   },
   {
