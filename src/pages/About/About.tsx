@@ -65,16 +65,19 @@ export default function About(): React.JSX.Element {
             className={styles.photo}
           />
           <div className={styles.photoOverlay}>
-            <div className={styles.overlayLabel}>// CHARACTER STATUS</div>
+            <div className={styles.overlayLabel}>// ADVENTURER STATUS</div>
             <div className={styles.overlayName}>PONGYANIN</div>
             <div className={styles.overlayDivider} />
             <div className={styles.overlayStat}>
               <span className={styles.overlayKey}>CLASS</span>
-              <span className={styles.overlayVal}>Backend Berserker</span>
+              <span className={styles.overlayVal}>Fullstack Spellblade</span>
             </div>
             <div className={styles.overlayStat}>
-              <span className={styles.overlayKey}>LV</span>
-              <span className={styles.overlayVal}>3 yrs 6 mo EXP</span>
+              <span className={styles.overlayKey}>EXP</span>
+              <span className={styles.overlayVal}>
+                Web Quests: almost 3 yrs<br />
+                IT Support Guild: 1 yr
+              </span>
             </div>
             <div className={styles.overlayStat}>
               <span className={styles.overlayKey}>HP</span>
@@ -85,20 +88,20 @@ export default function About(): React.JSX.Element {
             <div className={styles.overlayStat}>
               <span className={styles.overlayKey}>MANA</span>
               <span className={styles.overlayVal}>
-                <StatBar pct={0} /> 0
+                <StatBar pct={0} /> DEPLETED
               </span>
             </div>
             <div className={styles.overlayStat}>
               <span className={styles.overlayKey}>STA</span>
               <span className={styles.overlayVal}>
-                <StatBar pct={50} /> 50
+                <StatBar pct={50} /> 50 / 100
               </span>
             </div>
             <div className={styles.overlayStat}>
               <span className={styles.overlayKey}>BUFF</span>
-              <span className={styles.overlayVal}>Coffee +3 / Edamame +2</span>
+              <span className={styles.overlayVal}>Coffee Haste +3 / Edamame Regen +2</span>
             </div>
-            <div className={styles.overlayHint}>[ Click to view real photo ]</div>
+            <div className={styles.overlayHint}>[ Click to reveal true form ]</div>
           </div>
         </div>
 
