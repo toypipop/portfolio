@@ -36,16 +36,16 @@
 
 .photoWrapper {
   position: relative;
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
   cursor: pointer;
   overflow: hidden;
 }
 
 .photo {
   width: 100%;
-  max-height: 280px;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   display: block;
   border: 1px solid var(--color-border-wood);
 }
