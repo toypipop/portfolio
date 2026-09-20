@@ -2,7 +2,7 @@
   position: relative;
   min-height: calc(100vh - var(--navbar-height));
   background-color: var(--color-bg-about);
-  padding: 48px 160px;
+  padding: 48px clamp(160px, 18vw, 320px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: start;
 }

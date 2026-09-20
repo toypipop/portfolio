@@ -6,9 +6,9 @@ export default function Hero(): React.JSX.Element {
     <section id="hero" className={styles.hero} style={{ backgroundImage: `url(${homeBg})` }}>
       <div className={styles.content}>
         <div className={styles.contentInner}>
-          <p className={styles.eyebrow}>Web Developer · Chiang Mai</p>
+          <p className={styles.eyebrow}>Web Developer</p>
           <h1 className={styles.name}>PONGYANIN</h1>
-          <p className={styles.role}>AUSSWAPIPOP</p>
+          <p className={styles.role}>AUSSWAPIPOP [V.1.26.7.1]</p>
           <div className={styles.divider} />
           <p className={styles.summary}>
             Backend-focused Web Developer with hands-on experience
